@@ -1,0 +1,341 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	sleep(20);
+
+	mode(other);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	unknown23();
+	print("げげ、人間！？");
+	sleep(60);
+
+	disable_img(enemy);
+	sleep(30);
+
+	mode(other);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("あ、あれ？　");
+	print("何処行くの？");
+	sleep(110);
+
+	disable_img(player);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	sleep(30);
+
+	mode(other);
+	print("あーあ、私の光学迷彩スーツが壊れちった");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何よそれ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("人間の癖に私の姿がよく見えたわね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("目が良いからね");
+	print("もしくは、あんたが隠れてなかったかも");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("じゃあねー人間");
+	print("ちなみにこれ以上来ると危険だよー");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(enemy);
+	unknown11();
+	sleep(30);
+
+	mode(other);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("これ以上行くけどね");
+	sleep(60);
+
+	disable_img(player);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc2{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	sleep(30);
+
+	mode(other);
+	print("お、さっきの人間");
+	print("奥には進むなって言ったでしょ？");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("さっきはよくも邪魔してくれたわね");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("邪魔？");
+	print("貴方が何をしているのか知らないのに");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("邪魔なんて出来る訳がないな");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("私は山の上に住む神様に緊急の用事があるの");
+	print("通してくれる？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	print("山の上の神様だって？");
+	print("そんなもん何人もいるけど……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("悪いこたぁ言わない");
+	print("引き返した方が良い");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	unknown18();
+	play_bgm();
+	print("私は河城にとり");
+	print("通称、谷カッパのにとり");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("さあさあ、里へ帰った帰った");
+	print("この先、人間に対して排他的な奴も多いよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そんなの判ってるわ");
+	print("それでも行かなきゃ行けない時もあるの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	print("あらあら、久しぶりに盟友である");
+	print("人間に出会ったと言うのに残念ね……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("仕方がない、これ以上山に入るというなら");
+	print("その本気、確かめさせて貰うよ！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc3{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("つ、強い、私の兵器で倒せないなんて……");
+	print("人間とは思えない強さだわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("さあ、先に進むわよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("人間よ。河童と人間は古来からの盟友だから");
+	print("教えてやるよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("盟友？");
+	print("古来からの宿敵の間違いじゃない？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("最近、山の上に不穏な神が居着いたのは事実");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("貴方はそれを倒しに行くんだろ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("おっと、思わぬ所で情報得たわ");
+	print("何が目的で山に入っているのか忘れかけてたしね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("ああ、頼りない。人間は頼りない");
+	print("やっぱり天狗様に相談した方がよかったかな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("まぁ、この辺の河童には伝えておくから");
+	print("この先に行きなさいな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("滝が見えてきた……");
+	print("これからが本番ね！");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

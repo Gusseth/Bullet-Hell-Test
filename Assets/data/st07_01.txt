@@ -1,0 +1,441 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	sleep(20);
+
+	mode(other);
+	print("あら、もしかしてこの先に進むつもり？");
+	sleep(120);
+
+	mode(other);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("駄目よ");
+	print("永遠に眠り続ける私の友人が居るんだから");
+	sleep(120);
+
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("途中、神奈子が言っていたな");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("やはり");
+	print("この神社には何か別の神様が居るんだ");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("＊おおっと＊");
+	print("これは珍しい");
+	sleep(60);
+
+	enable_img(enemy, 0);
+	mode(other);
+	call_boss();
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("神奈子が本殿まで人間を通すなんて");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("いやまあ勝手に通ってきただけだけど……");
+	print("お前は誰だ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	play_bgm();
+	print("この神社の本当の神様よ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("本当の、だ？");
+	print("またなんかドロドロしてそうだな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("表向きは神奈子の神社");
+	print("でも、実質は私の神社");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("表向きには私の名前は殆ど出てこないけど");
+	print("実際に神社で働いているのはこの私");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("それって……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("言い換えれば、働いた分、全部神奈子に");
+	print("持って行かれているって事じゃないのか？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("う");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神社与えられて喜んでいたら");
+	print("美味しいところ持って行かれたとか？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("そうじゃないの");
+	print("この神社は元々私の神社");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("ただ昔、神奈子に侵略戦争を仕掛けられて");
+	print("神社を乗っ取られただけよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("乗っ取られただけって");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("今では、私への信仰心も増えたし");
+	print("結果として感謝しているけど");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神様の世界も大変そうだな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("じゃ、この神社の秘密が少し判ったから");
+	print("わたしゃこの辺で");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	unknown18();
+	print("何言ってるのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("わざわざ本殿まで訪れた参拝客");
+	print("只で帰す訳にもいかないでしょう？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("お、何か手みやげでもあるのか？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("貴方は神社に踏み込んだのだから");
+	print("早苗と神奈子にもしたように");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私とも弾幕祭りを行う必要があるわ！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc2{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	sleep(30);
+
+	mode(other);
+	print("あはははは。天晴れだわ");
+	print("一王国を築いたこの私が、人間に負けるとは");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("弾幕においては私が先輩だからな");
+	print("勝たない訳にいくまい");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("人間でも神様と同等の強さを");
+	print("発揮できる弾幕ごっこ……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("幻想郷には賢い事を考えた人がいるのね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("基本的にみんな頭が良いからな");
+	print("一部を除いて");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("よし決めた！");
+	print("私もこのまま幻想郷に住もうっと");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そのつもりで幻想郷に来たんじゃないのかよ");
+	print("また帰るつもりだったのか？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("神奈子が勝手に神社ごと");
+	print("こっちに持ってきただけよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("ああそうかい");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("でも、神奈子には見えていたのかもね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("幻想郷に、神様のセカンドライフが");
+	print("眠っている事を");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("おおっと、外の世界の現役の神様が");
+	print("みんなこっちに来られたらたまらんぜ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("そんなに広くないし、外の世界で");
+	print("現役の神様は来ないと思うけど");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("まあいいや。幻想郷に住むのなら");
+	print("宴会の一つでも開宴するんだな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そうでもしないと、妖怪達が納得しないぜ");
+	print("後、私とか");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("まあ怖い");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("それでは早速大宴会を企画しましょう");
+	print("４４本の筒粥を準備しますわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("お粥で宴会とは……");
+	print("外の世界の酒事情はカオスだな");
+	sleep(4);
+
+	enter_sleep(600);
+	mode(other);
+	next_stage();
+	sleep(60);
+
+	name_img();
+	sleep(600);
+
+}

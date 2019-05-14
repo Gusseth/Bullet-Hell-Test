@@ -1,0 +1,257 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	enable_img(enemy, 0);
+	mode(enemy);
+	sleep(4);
+
+	image_change(player, 3);
+	mode(enemy);
+	print("神社に来て暴れるとは何事なの！");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神社だって！？　こんな山の上に？");
+	print("そう言えば、そんな雰囲気だけど……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("ここは守矢の神社");
+	print("忘れ去られた過去の神社");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("外の世界から神社と湖ごと幻想郷に");
+	print("移動してきたのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("あんた、誰？");
+	print("まさか巫女？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	play_bgm();
+	print("私は風祝（かぜはふり）の早苗");
+	print("外の世界では絶え果てた現人神の末裔");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("まぁ巫女と言えば巫女みたいなもんね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そうか、巫女って職業みたいなもんだったな");
+	print("霊夢の事かと勘違いする所だったぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 4);
+	mode(enemy);
+	print("それで、貴方は何者ですか？");
+	print("参拝客には見えないのですが……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("私は魔法使いの魔理沙");
+	print("悪の神様を懲らしめる麓のヒーロー");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("河童や天狗達も纏めて懲らしめる");
+	print("何でも屋さ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	unknown18();
+	print("麓には変な人間がいた物ね");
+	print("それで、私も懲らしめるって言うの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("懲らしめるぜ");
+	print("悪い神様みたいだからな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("いいわ");
+	print("貴方に代わって私が懲らしめましょう");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("私はあんたを懲らしめるんだぜ？");
+	print("誰を懲らしめるんだよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("貴方に決まってるじゃない");
+	print("現人神の力で懲らしめてあげましょう");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("奇跡を起こす神の力で！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("強い……");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("何でも屋なんて油断させておいて");
+	print("実は本物のヒーローか何か？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("だから、何でも屋だぜ");
+	print("天狗や河童達もあんたらを嫌っていたぜ");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("私はただ、山の神様である八坂様に");
+	print("この山を御神体にして頂きたかっただけ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("それが、この地に棲む妖怪や人間にとって");
+	print("幸せな事になると……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そんなこたぁ無いから、さ、最後の親玉に");
+	print("会わせるんだな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("え！？");
+	print("もしかして八坂様にも会われるつもりなの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("悪い事する神様を懲らしめないとな");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

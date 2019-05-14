@@ -1,0 +1,209 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("湖に着いたわ");
+	print("ここに居るはずね");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何だろう、この気持ち悪い柱の山は……");
+	print("ま、とにかく出てきなさい！");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("我を呼ぶのは何処の人ぞ");
+	sleep(120);
+
+	enable_img(enemy, 0);
+	mode(other);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("おや？");
+	print("なーんだ、麓の巫女じゃないの");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私に何か用？");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("随分とフランクな神様ね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("最近は、厳かな雰囲気を見せるよりも");
+	print("友達感覚の方が信仰が集まりやすいのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("まあいいや、うちの神社を乗っ取ろうと");
+	print("するの、あれ困るからやめてくれない？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("乗っ取ろうとなんてしていないわよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私は貴方の神社を助けたいだけ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("貴方の神社に人が集まるようにしたいだけ");
+	print("妖怪の魔の手から救いたいだけ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("余計なお世話よ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("大体ねぇ、例えあんたを祀っても信仰が");
+	print("増えるかどうか判らないじゃん");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	play_bgm();
+	unknown18();
+	unknown11();
+	print("信仰は０よりも減ることは有り得ない");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("幻想郷に足りない物は");
+	print("神様を信じる心");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("巫女の貴方なら判るでしょう？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("私だって、神社に参拝客が来たらいいなあと");
+	print("思ってるわよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("でも、それは私の力で何とかするから……");
+	print("貴方の力なんか借りないから……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("神社は巫女の為にあるのではない");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("神社は神の宿る場所");
+	print("そろそろ――");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("神社の意味を真剣に考え直す時期よ！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	sleep(300);
+
+	next_stage();
+	mode(other);
+	sleep(240);
+
+	name_img();
+	sleep(600);
+
+}

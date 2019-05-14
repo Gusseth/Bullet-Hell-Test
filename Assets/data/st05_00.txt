@@ -1,0 +1,267 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	enable_img(enemy, 0);
+	mode(enemy);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("巫女の貴方の方から山に入るとは……");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("今すぐうちの神様を勧請したいのかしら");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("ここは神社みたいだけど……");
+	print("うち以外にも神社はあったのね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("ここは守矢の神社");
+	print("忘れ去られた過去の神社");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("外の世界から神社と湖ごと幻想郷に");
+	print("移動してきたのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神社と湖ごと移動って");
+	print("派手な事したわね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("ここの山は私と私の神様が頂くわ");
+	print("そして、貴方の神社を頂けば――");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("幻想郷の信仰心は、全て私達の物……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そんな事したら、幻想郷におわす八百万の神が");
+	print("黙ってはいないわよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("これは幻想郷の為でもあるのですよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 4);
+	mode(enemy);
+	print("今の信仰心が失われた状態が続けば、");
+	print("幻想郷は力を失います");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("奇跡を起こす力を失うのです");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("冗談じゃない");
+	print("信仰心くらい、私の力で何とか戻すわよ！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	play_bgm();
+	unknown18();
+	print("私は風祝（かぜはふり）の早苗");
+	print("外の世界では絶え果てた現人神の末裔");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("神を祀る人間が祀られる事もある");
+	print("巫女が神になる事もある");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("貴方にはそのぐらいの覚悟が出来て");
+	print("巫女をしているの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("別に神になってもならなくても関係ないわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("やるって言ったら、やる時もまぁまぁあるの！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("そう");
+	print("では現人神の力を見て考えなさい");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("奇跡を起こす神の力を！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("強い……");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("こんなに力があるのに");
+	print("何で貴方の神社に信仰心が集まらないの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("それは私が知りたい");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("私の神様の分社を置いておくだけでも");
+	print("信仰心は大分回復すると思うんだけど");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("うーん、それは考えておくけど");
+	print("まずは、その神様に会わないと……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("え！？");
+	print("貴方の目的って、もしかして……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("悪い事する神様を懲らしめるのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

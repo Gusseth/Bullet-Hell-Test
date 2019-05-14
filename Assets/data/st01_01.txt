@@ -1,0 +1,112 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("何だろう");
+	print("久しぶりなんで調子がそこそこだぜ");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("いきなり強い奴とか出てきてくれないかねぇ");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("随分と余裕だ事");
+	sleep(60);
+
+	enable_img(enemy, 0);
+	mode(other);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	play_bgm();
+	print("妖怪に怯えながら行動する人間の癖に");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("妖怪以外にも怯えるぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("あんたが向かおうとしている場所にいる");
+	print("妖怪は、今までの妖怪とは訳が違うわよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("それは楽しみだな");
+	print("お前も妖怪より強いんだろう？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("私はただの八百万分の一の神");
+	print("この先は、神様がごろごろしているんだから");
+	sleep(4);
+
+	enter_sleep(600);
+	unknown18();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	mode(player);
+	call_boss();
+	sleep(30);
+
+	mode(other);
+	print("こいつみたいな奴がごろごろしているのか");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("余り期待できないな");
+	sleep(4);
+
+	enter_sleep(600);
+	name_img();
+	disable_img(player);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

@@ -1,0 +1,180 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("こうやって闘いながら進むと");
+	print("山は遠いんだな");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("山に辿り着く前に円周率を暗唱出来そうだ");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("あらあらまだ居たの？");
+	sleep(60);
+
+	enable_img(enemy, 0);
+	mode(other);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("産医師異国に向こう……");
+	print("……御社に蟲さんざん");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("何の呪文よ");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("誰だ？");
+	print("見ない顔だな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	play_bgm();
+	print("さっきも会ったけど");
+	print("私はここで厄を集めているの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("それはえんがちょだな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("えんがちょの向こう側に私が居るから");
+	print("人間は平和に暮らせるのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("山は人間の立ち入る所じゃない");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("これから盛大に盛り上がってくる所だぜ");
+	print("邪魔するな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("あらゆる厄災が降りかかるわよ");
+	print("人間を守る為にも行かせるものか！");
+	sleep(4);
+
+	enter_sleep(600);
+	unknown18();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("うーん");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("……御社に蟲さんざん……");
+	print("この続き、何だっけ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("何言ってるのか判らないわよ");
+	print("山に行きたいってあんた本当に人間なの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神社が蟲だらけになって……");
+	print("ま、そうやって円周率を憶えるのが人間だ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("故に人間だぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

@@ -1,0 +1,223 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("山の上にこんな大きな湖とはな……");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("出てきな");
+	print("空気の読めない神様よ");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("我を呼ぶのは何処の人ぞ");
+	sleep(120);
+
+	enable_img(enemy, 0);
+	mode(other);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("お前か？　山を我が物にしようとしたり");
+	print("麓の神社を乗っ取ろうとしている神様は");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("懲らしめに来たぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("へぇ、面白いわね");
+	print("幻想郷には変わった人間も居るのね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そんな訳で、山に居座るには天狗や河童達");
+	print("とも仲良くしてやってくれないと――");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("誰かが困るんだ！");
+	print("きっと");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("山は私自身であり");
+	print("山は私への信仰の対象です");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("幻想郷にはめぼしい山がここしか無かった");
+	print("のですから");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("この山に住んでいる者が私を信仰しないの");
+	print("なら仕方がありません");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("お、幻想郷から立ち退く気か？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	play_bgm();
+	unknown18();
+	unknown11();
+	print("神の信仰に邪魔する者は");
+	print("一つ一つ排除しなければいけません");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そこまでして信仰に拘るのは");
+	print("何故なんだ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("今の幻想郷に神様なんて必要ないぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("信仰が失われると、幻想郷は混沌と");
+	print("し始めるでしょう");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("信仰の意味は、信仰していない人には");
+	print("判らない");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神社なら毎日の様に行ってるがな");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("信仰が失われた神社はただの小屋");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("貴方は毎日の様に小屋に通っているだけ");
+	print("貴方は一度――");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 1);
+	mode(enemy);
+	print("神の荒ぶる御魂を味わうと良い！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	sleep(300);
+
+	next_stage();
+	mode(other);
+	sleep(240);
+
+	name_img();
+	sleep(600);
+
+}

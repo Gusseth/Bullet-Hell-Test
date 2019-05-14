@@ -1,0 +1,438 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	sleep(20);
+
+	mode(other);
+	print("あら、もしかしてこの先に進むつもり？");
+	sleep(120);
+
+	mode(other);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("駄目よ");
+	print("永遠に眠り続ける私の友人が居るんだから");
+	sleep(120);
+
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("神奈子が言ってた友達って……");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("やっぱり神様なんだろうなぁ");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("誰が友達ですって？");
+	sleep(60);
+
+	enable_img(enemy, 0);
+	mode(other);
+	call_boss();
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("私の神社を勝手に幻想郷に");
+	print("送り込んでおいて");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("よくもまぁ、いけしゃあしゃあと");
+	print("そんな事言えたもんだ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("あんな女、敵よ敵");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("この神社は神奈子の神社じゃないの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	play_bgm();
+	print("あーうー");
+	print("まあ、私の神社だったんだけどねぇ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("だった？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("昔、神奈子に敗れてからはあいつの神社ね");
+	print("仕方がない");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("でもまあ、神社は自由にさせてくれるし");
+	print("私への信仰も増えたし");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("まあ、感謝はして無くもないけど");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("それより何よ");
+	print("貴方は麓の巫女でしょ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("いやまあ、この神社の秘密を探りに来ただけ");
+	print("なんだけどね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何だかんだ言って二人とも仲良さそうだし");
+	print("ま、帰ろうかな？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("何言ってるのよ");
+	print("早苗とも神奈子とも遊んだんでしょ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私だけ無視して巫女が務まるとでも");
+	print("思ってるの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("思ってますが");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	unknown18();
+	print("もー！　巫女なら知っておきなさい！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("「お祭り」は別名「神遊び」と言って");
+	print("神様が人間と遊ぶ事なの！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("もしかして、前に早苗や神奈子と");
+	print("戦ったりしたのって……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("そう、ただの神遊び、つまりお祭り");
+	print("今日は私の弾幕お祭りの番よ！");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc2{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	enable_img(enemy, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	sleep(30);
+
+	mode(other);
+	print("あはははは。天晴れだわ");
+	print("一王国を築いたこの私が、人間に負けるとは");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何がお祭りなのかしら");
+	print("ただの弾幕じゃないの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("だから、お祭りとは神様が遊ぶ事");
+	print("日常感覚を離れた晴れの日の事よ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("ふーん");
+	print("割と弾幕は日常感覚だけどね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("これだけ強い人間が居るのなら");
+	print("幻想郷に住むのも悪くはないわね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("あら私、余計な事したかしら？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("もう住み込む事に決めたから");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("そうだ、貴方の神社でも");
+	print("お祭りを始めればいいんじゃないの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("そうすればきっと人間も集まるよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("弾幕祭り？");
+	print("集まるかなぁ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("集まるってば");
+	print("日にち決めて例大祭とかやれば良いのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("まあ良いけどね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("この神社の秘密が少し判ったから");
+	print("今日はもう帰るわよ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("貴方の神社の参拝客が増えなかったり");
+	print("神奈子が変な事をしていたら");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("私に相談してね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("はいはい");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("神奈子が持っている神徳も信仰心も");
+	print("殆どが、私の力なんだから");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("今なんと？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("私は実務。神奈子は営業");
+	print("ま、そんな所かしら？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("神様の世界も世知辛いのねぇ……");
+	sleep(4);
+
+	enter_sleep(600);
+	mode(other);
+	next_stage();
+	sleep(60);
+
+	name_img();
+	sleep(600);
+
+}

@@ -1,0 +1,122 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	print("落ち葉で視界が良くないわね");
+	print("こんな調子で山に立ち入って大丈夫かしら？");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("あれ？");
+	print("何だか美味しそうな匂いが……");
+	enter_sleep(600);
+	sleep(4);
+
+	mode(other);
+	unknown11();
+	mode(enemy);
+	print("巫女の癖に神を喰べようだなんて");
+	sleep(60);
+
+	enable_img(enemy, 0);
+	mode(other);
+	sleep(4);
+
+	image_change(player, 3);
+	mode(enemy);
+	print("笑止千万、不届き千万！");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("誰が喰べるって言ったのよ");
+	print("でも、美味しそうな匂いは貴方の匂い？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	play_bgm();
+	print("神様たる物、身に纏う香りも気を付けないと");
+	print("あ、ちなみに私は豊穣の神ね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("うーん、生焼き芋の香り");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 3);
+	mode(enemy);
+	print("収穫したてのお芋は私の香水");
+	print("巫女に喰べられてたまるもんですか！");
+	sleep(4);
+
+	enter_sleep(600);
+	unknown18();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	mode(player);
+	call_boss();
+	sleep(30);
+
+	mode(other);
+	print("いやはや、神様はピンキリねぇ。うちの神は");
+	print("こんなのよりも力がないのかしら？");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(4);
+
+	call_boss();
+	print("おっと、こんな所で芋焼いている");
+	print("場合じゃないわ");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("先を急ごうっと");
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

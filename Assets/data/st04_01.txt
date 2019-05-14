@@ -1,0 +1,268 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	enable_img(enemy, 0);
+	mode(enemy);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	print("あやややや");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	play_bgm();
+	print("侵入者の報告で来てみれば");
+	print("まさか貴方とは……");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("お、いつぞやの天狗");
+	print("丁度いいぜ、この先を案内してくれ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("残念、私は侵入者を追い返しに来たのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("そもそも、何処に案内すれば良いのやら");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("聞いたぜ、山の上に変な神様が住み始めたん");
+	print("だって？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("私はそいつを倒しに来た勇者だ");
+	print("ガンガン行く勇者だぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	print("ほう、そんな話、誰から聞いたのかしら？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("誰からだったかな、もう忘れたが……");
+	print("そんなでその神様の所まで行きたいんだ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	unknown18();
+	print("うふふ");
+	print("私は貴方の自由にさせてあげたいわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("でも、私は貴方を通す訳に行かないの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私があっさり通しちゃったら");
+	print("見回り天狗達も納得がいかないからね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何でだよ");
+	print("良いじゃないか、天狗には迷惑かけないぜ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私は上司の命令でここを通すなと");
+	print("言われてるの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("組織に属するってのは");
+	print("自分の意思だけでは動けなくなるって事よ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("さあ、手加減してあげるから");
+	print("本気で掛かってきなさい！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("手加減なんてしけた事言わなくても良いぜ");
+	print("どうせなら不戦敗で良いじゃん");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("まじめに戦った事って殆ど無かったけど");
+	print("予想以上の強さだったわ");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("これなら、あの厄介な神様も倒せるかもね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("ああ、お前らの代わりに倒してきてやるよ");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("でも、その神様は何をして");
+	print("天狗や河童に嫌がられてるんだ？");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("……河童？");
+	print("もしかしてその話、河童に聞いたのね？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("簡単に言うと、山を自分の物にしようと");
+	print("しているから、古参の私達にはうざいだけ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何だよ、お前ら天狗だって勝手に山を");
+	print("自分の物にしてるじゃん");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("そのお陰で人間が近づけないしさ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("それでも、新しく入ってきても天狗に敬意も");
+	print("払わないのよ？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("なんだかなぁ。ま、良いぜ、とりあえず");
+	print("その神様の所まで案内しな");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

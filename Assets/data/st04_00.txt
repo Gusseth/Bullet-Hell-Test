@@ -1,0 +1,303 @@
+$MSG_TYPE = TH10_MSG
+
+function proc0{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	sleep(30);
+
+	mode(other);
+	enable_img(enemy, 0);
+	mode(enemy);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	print("あやややや");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 7);
+	mode(enemy);
+	play_bgm();
+	print("侵入者の報告で来てみれば");
+	print("まさか貴方とは……");
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("別にあんたら天狗に用事がある訳じゃないわ");
+	print("どいてよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("侵入者の報告を受けて");
+	print("何故か私が呼び出されたのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("私はただの新聞記者なのにねぇ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何が言いたいの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("貴方の事を一番良く知っているのが");
+	print("私だから");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("貴方の相談事にも乗れるかもしれないって");
+	print("上司の粋な計らいね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("さっきも言ったけど天狗には用事はないわ");
+	print("山に居る神様に会いたいの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("山の神様？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("はは～ん");
+	print("さてはあの神様の事かな？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("何か知ってるの？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("最近、天狗も手を焼く神様が住み着いたのよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("どんどんと山を自分の物にしようとするし……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("最近は麓にまで降りて信仰を集めようと");
+	print("している、って言う話だし……");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("……信仰を集めている");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("きっと、そいつだわ");
+	print("そいつに会いたいの。何処にいる？");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("調子に乗るようだったら、天狗達が倒すつもり");
+	print("だったので、貴方が行く必要はないわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("折角ここまで来たんだから、良いじゃないの");
+	print("その神様の居る所まで連れて行ってよ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 6);
+	mode(enemy);
+	print("でも、私は貴方を通す訳に行かないの");
+	unknown18();
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("私があっさり通しちゃったら");
+	print("見回り天狗達も納得がいかないからね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("面倒な種族ね");
+	print("天狗って");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 5);
+	mode(enemy);
+	print("組織に属するってのは");
+	print("自分の意思だけでは動けなくなるって事よ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 0);
+	mode(enemy);
+	print("さあ、手加減してあげるから");
+	print("本気で掛かってきなさい！");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("手加減はありがたいけど……");
+	print("だったら通してくれれば良いのに");
+	sleep(4);
+
+	enter_sleep(600);
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}
+function proc1{
+	mode(other);
+	enable_textarea();
+	enable_img(player, 0);
+	call_boss();
+	enable_img(enemy, 0);
+	mode(enemy);
+	image_change(player, 8);
+	sleep(30);
+
+	mode(other);
+	print("まじめに戦った事って殆ど無かったけど");
+	print("予想以上の強さだったわ");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("これなら、あの厄介な神様も倒せるかもね");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("さあ、その神様の所まで案内して！");
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("その神様は、少し前に神社と湖ごと");
+	print("引越してきたの");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	image_change(player, 8);
+	mode(enemy);
+	print("この先に新しい神社が出来ているのよ");
+	print("そこに居るはずだわ");
+	sleep(4);
+
+	enter_sleep(600);
+	sleep(4);
+
+	call_boss();
+	mode(player);
+	print("山の上に神社？");
+	print("神社はうちだけじゃ無かったのかなぁ……");
+	sleep(4);
+
+	enter_sleep(600);
+	next_stage();
+	mode(other);
+	sleep(60);
+
+	name_img();
+	disable_img(player);
+	disable_img(enemy);
+	disable_textarea();
+	mode(other);
+	sleep(30);
+
+}

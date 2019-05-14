@@ -1,0 +1,113 @@
+$MSG_TYPE = TH11_ENDING_MSG
+
+function proc0{
+	load_anm(0, "staff.anm");
+	set_background_image(0, 0, 0);
+	set_background_image(1, 0, 1);
+	play_bgm("bgm/th10_14.wav");
+	sleep(420);
+
+	set_background_image(2, 0, 6);
+	sleep(60);
+
+	set_background_image(2, 0, 7);
+	set_background_image(3, 0, 6);
+	sleep(300);
+
+	set_background_image(3, 0, 8);
+	sleep(60);
+
+	set_background_image(3, 0, 9);
+	set_background_image(2, 0, 8);
+	sleep(290);
+
+	set_background_image(2, 0, 10);
+	sleep(60);
+
+	set_background_image(2, 0, 11);
+	set_background_image(3, 0, 10);
+	sleep(330);
+
+	set_background_image(3, 0, 12);
+	sleep(60);
+
+	set_background_image(3, 0, 13);
+	set_background_image(2, 0, 12);
+	sleep(320);
+
+	set_background_image(0, 0, 2);
+	set_background_image(1, 0, 3);
+	sleep(90);
+
+	set_background_image(2, 0, 14);
+	sleep(15);
+
+	set_background_image(3, 0, 15);
+	sleep(15);
+
+	set_background_image(2, 0, 16);
+	sleep(15);
+
+	set_background_image(3, 0, 17);
+	sleep(30);
+
+	set_background_image(2, 0, 18);
+	set_background_image(3, 0, 19);
+	sleep(800);
+
+	set_background_image(2, 0, 20);
+	sleep(60);
+
+	set_background_image(2, 0, 21);
+	set_background_image(3, 0, 20);
+	sleep(300);
+
+	set_background_image(3, 0, 22);
+	sleep(60);
+
+	set_background_image(3, 0, 23);
+	set_background_image(2, 0, 22);
+	sleep(300);
+
+	set_background_image(3, 0, 24);
+	sleep(60);
+
+	set_background_image(3, 0, 25);
+	set_background_image(2, 0, 24);
+	sleep(155);
+
+	set_background_image(0, 0, 4);
+	set_background_image(1, 0, 5);
+	set_background_image(3, 0, 26);
+	sleep(60);
+
+	set_background_image(3, 0, 27);
+	set_background_image(2, 0, 26);
+	sleep(400);
+
+	set_background_image(3, 0, 28);
+	sleep(60);
+
+	set_background_image(3, 0, 29);
+	set_background_image(2, 0, 28);
+	sleep(400);
+
+	set_background_image(4, 0, 30);
+	sleep(60);
+
+	set_background_image(5, 0, 31);
+	set_background_image(4, 0, 30);
+	unknown15(6, 0, 32);
+	unknown16(6, 0, 33);
+	unknown17(6, 0, 34);
+	unknown17(7, 0, 35);
+	sleep(60);
+
+	enter_sleep(-1);
+	unknown11();
+	sleep(60);
+
+	unknown14(60);
+	sleep(60);
+
+}
