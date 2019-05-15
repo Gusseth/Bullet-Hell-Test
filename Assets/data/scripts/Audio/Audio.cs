@@ -14,7 +14,7 @@ public class Audio {
     /// <summary> Enumeration of all sound effects. </summary>
     public enum sfx
     {
-        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, plDeath, bossDeath, enemyDeath, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2
+        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, spellcard, plDeath, bossDeath, enemyDeath, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2
     }
 
     /// <summary> Parses audio enumerations into AudioClips. </summary>
@@ -51,6 +51,9 @@ public class Audio {
                     break;
                 case sfx.masterSpark:
                     audioName = "se_nep00";
+                    break;
+                case sfx.spellcard:
+                    audioName = "se_cat00";
                     break;
                 case sfx.plDeath:
                     audioName = "se_pldead00";

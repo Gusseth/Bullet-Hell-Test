@@ -41,9 +41,9 @@ public class EntityHandler : MonoBehaviour {
         {
             if (entityType != EntityType.boss)
             {
+                Destroy(gameObject);
                 // If the entity is not a stage boss or a miniboss
                 Environment.PlaySound(Audio.sfx.enemyDeath, Environment.sfxVolume * 0.6F);
-                Destroy(gameObject);
 
                 // Spawns the items in the loot table when the entity's health is at or less than 0.
                 foreach (Item.ItemType item in lootTable)

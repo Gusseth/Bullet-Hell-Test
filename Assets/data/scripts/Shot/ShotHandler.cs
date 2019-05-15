@@ -24,7 +24,6 @@ public class ShotHandler : MonoBehaviour {
 
     public void OnShotNullified()
     {
-        Debug.Log("This shot was just nullified! This is a temporary message.");
         Destroy(gameObject);
     }
 
@@ -79,7 +78,7 @@ public class ShotHandler : MonoBehaviour {
     // This is only called if the bullet hits the player, an enemy, or other things, listed as an entity.
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.transform.GetComponent<EntityHandler>() || collision.transform.GetComponent<PlayerHandler>()) && collision.gameObject != source)
+        if ((collision.transform.GetComponent<EntityHandler>() || collision.transform.GetComponent<BossHandler>() || collision.transform.GetComponent<PlayerHandler>()) && collision.gameObject != source)
         {
             hit = true;
             collision.gameObject.SendMessage("OnHit", new HitData(shot.damage, source, shot));

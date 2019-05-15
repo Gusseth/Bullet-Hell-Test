@@ -18,7 +18,7 @@ public class Environment : MonoBehaviour {
     public readonly static string gameName = "Touhou 17 - Mountain of Debugging";
 
     /// <summary> The current version of this build. </summary>
-    public readonly static string version = "v0.01dev";
+    public readonly static string version = "v0.02b-dev";
 
     /// <summary> Anti-Wriggle mode. </summary>
     public readonly static bool debugMode = true;
@@ -204,26 +204,30 @@ public class Environment : MonoBehaviour {
         return Vector3.up * speed * Time.deltaTime;
     }
 
-// Public Static IEnumerators
+    // Public Static IEnumerators
 
     /// <summary>
-    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x)' to do so.
+    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
     /// </summary>
     /// <param name="seconds">Delay added in seconds as a float.</param>
+    /// <param name="method">Insert pieces of code to run after the delay has elapsed. Use 'delegate {code}'.</param>
     /// <returns></returns>
-    public static IEnumerator AddDelay(float seconds)
+    public static IEnumerator AddDelay(float seconds, System.Action method)
     {
         yield return new WaitForSeconds(seconds);
+        method.Invoke();
     }
 
     /// <summary>
-    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x)' to do so.
+    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})'' to do so.
     /// </summary>
     /// <param name="seconds">Delay added in seconds as an integer.</param>
+    /// <param name="method">Insert lines of code to run after the delay has elapsed. Use 'delegate {code}'.</param>
     /// <returns></returns>
-    public static IEnumerator AddDelay(int seconds)
+    public static IEnumerator AddDelay(int seconds, System.Action method)
     {
         yield return new WaitForSeconds(seconds);
+        method.Invoke();
     }
 
 

@@ -118,6 +118,21 @@ public class PatternBase : object
 public class AttackStage : List<PatternBase>
 {
     /// <summary>
+    /// The name of this attack.
+    /// </summary>
+    public string name;
+    
+    /// <summary>
+    /// The boss' health requirement to move on to the next Attack Stage.
+    /// </summary>
+    public float healthTriggerPoint;
+
+    /// <summary>
+    /// True if this Attack Stage is a spellcard.
+    /// </summary>
+    public bool isSpellcard;
+    
+    /// <summary>
     /// The attack stage list that contains all bullet patterns in the stage.
     /// </summary>
     public List<PatternBase> Stage = new List<PatternBase>();
@@ -125,10 +140,16 @@ public class AttackStage : List<PatternBase>
     /// <summary>
     /// Constructs an attack stage from the given list of patterns.
     /// </summary>
-    /// <param name="patterns"></param>
-    public AttackStage(List<PatternBase> patterns)
+    /// <param name="name">The name of this attack.</param>
+    /// <param name="healthTrigger">The boss' health requirement to move on to the next Attack Stage.</param>
+    /// <param name="isSpellcard">True if this Attack Stage is a spellcard.</param>
+    /// <param name="patterns">Constructs an attack stage from the given list of patterns.</param>
+    public AttackStage(string name, float healthTrigger, bool isSpellcard, List<PatternBase> patterns)
     {
         Stage = patterns;
+        healthTriggerPoint = healthTrigger;
+        this.isSpellcard = isSpellcard;
+        this.name = name;
     }
     
     /*

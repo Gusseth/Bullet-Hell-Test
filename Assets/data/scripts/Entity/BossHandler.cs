@@ -12,11 +12,28 @@ public class BossHandler : MonoBehaviour {
     /// <summary> The boss' health. </summary>
     public float bossHealth;
 
+    /// <summary> The boss' maximum health. </summary>
+    public float maxHealth = ushort.MaxValue;
+
     /// <summary> True if the parent is a midboss. </summary>
     public bool midboss = false;
 
-    /// <summary> List of all attacks of the boss, including non-spell card attacks. </summary>
+    /// <summary> True if a spellcard is activated. </summary>
+    public bool spellcardActive = false;
+
+    /// <summary> True if a spellcard is activated. </summary>
+    public bool isInvincible = false;
+
+    /// <summary> The health threshold that will trigger a switch in the boss' Attack Stage. </summary>
+    public float healthTriggerPoint;
+
+    /// <summary> This is the previous value of healthTriggerPoint before a switch in AttackStage. </summary>
+    private float previousTriggerPoint;
+
+    /// <summary> List of all attacks of the boss, including non-spell card attacks. Each object, an AttackStage, is a nested list that contains the bullet patterns. </summary>
     public List<AttackStage> AttackTable = new List<AttackStage>();
+
+    bool playDamageSound = true;
 
     /// <summary>
     /// This is the main body of the Attack Table system. Loops the contents of an AttackStage.
@@ -58,19 +75,154 @@ public class BossHandler : MonoBehaviour {
     public void StopBulletLoop()
     {
         StopAllCoroutines();
+        playDamageSound = true;
     }
 
     public void MoveToNextAttackStage()
     {
         StopBulletLoop();
-        AttackTable.Remove(AttackTable[0]);
-        IEnumerator smallDelay = Environment.AddDelay(3);
-        TriggerAttack();
+        Environment.ClearAllShots();
+        try
+        {
+            AttackTable.Remove(AttackTable[0]);
+            isInvincible = true;
+            spellcardActive = AttackTable[0].isSpellcard;
+
+            if (spellcardActive)
+            {
+                Environment.PlaySound(Audio.sfx.spellcard, Environment.sfxVolume * .4F);
+            }
+
+            IEnumerator smallDelay = Environment.AddDelay(3,
+            delegate
+            {
+                previousTriggerPoint = healthTriggerPoint;
+                healthTriggerPoint = AttackTable[0].healthTriggerPoint;
+                isInvincible = false;
+                TriggerAttack();
+            });
+            StartCoroutine(smallDelay);
+        }
+        catch (System.ArgumentOutOfRangeException)
+        {
+            Environment.PlaySound(Audio.sfx.bossDeath, Environment.sfxVolume * .4F);
+            Vector3 pos = transform.position;
+            Destroy(gameObject, 1);
+            Environment.SpawnItem(Item.ItemType.life, pos);
+        }
+    }
+
+    public void OnHit(HitData data)
+    {
+        if (!isInvincible)
+        {
+            if (spellcardActive)
+            {
+                if (healthTriggerPoint == maxHealth)
+                {
+                    // If the current Attack Stage is a spellcard and it is a spellcard that occupies the entire health bar, it reduces damage by 1/6.
+                    bossHealth = Mathf.Clamp(bossHealth - (data.damage / 4F), 0, maxHealth);
+                    if (playDamageSound)
+                    {
+                        if (bossHealth <= maxHealth / 5F)
+                        {
+                            playDamageSound = false;
+                            Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                            StartCoroutine(Environment.AddDelay(.1F,
+                            delegate
+                            {
+                                playDamageSound = true;
+                            }));
+                        }
+                        else
+                        {
+                            playDamageSound = false;
+                            Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                            StartCoroutine(Environment.AddDelay(.1F,
+                            delegate
+                            {
+                                playDamageSound = true;
+                            }));
+                        }
+                    }
+                }
+                else
+                {
+                    // Else, it reduces damage by 1/24.
+                    bossHealth = Mathf.Clamp(bossHealth - (data.damage / 24F), healthTriggerPoint, maxHealth);
+
+                    if (playDamageSound)
+                    {
+                        if (bossHealth <= (healthTriggerPoint) + (previousTriggerPoint - healthTriggerPoint) / 5F)
+                        {
+                            playDamageSound = false;
+                            Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                            StartCoroutine(Environment.AddDelay(.1F,
+                            delegate
+                            {
+                                playDamageSound = true;
+                            }));
+                        }
+                        else
+                        {
+                            playDamageSound = false;
+                            Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                            StartCoroutine(Environment.AddDelay(.1F,
+                            delegate
+                            {
+                                playDamageSound = true;
+                            }));
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Else if the Attack Stage is a normal attack, no damage reduction is taken.
+                bossHealth = Mathf.Clamp(bossHealth - data.damage, healthTriggerPoint, maxHealth);
+
+                if (playDamageSound)
+                {
+                    if (bossHealth <= (healthTriggerPoint) + ((maxHealth - healthTriggerPoint) / 5F))
+                    {
+                        playDamageSound = false;
+                        Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                        StartCoroutine(Environment.AddDelay(.1F,
+                        delegate
+                        {
+                            playDamageSound = true;
+                        }));
+                    }
+                    else
+                    {
+                        playDamageSound = false;
+                        Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                        StartCoroutine(Environment.AddDelay(.1F,
+                        delegate
+                        {
+                            playDamageSound = true;
+                        }));
+                    }
+                }
+            }
+
+
+            if (bossHealth == 0)
+            {
+                bossHealth = maxHealth;
+                MoveToNextAttackStage();
+            }
+            else if (bossHealth == healthTriggerPoint && !spellcardActive)
+            {
+                bossHealth = healthTriggerPoint;
+                MoveToNextAttackStage();
+            }
+        }
     }
 
     // Use this for initialization
     void Start () {
-
+        TriggerAttack();
 	}
 	
 	// Update is called once per frame

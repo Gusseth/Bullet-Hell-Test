@@ -167,31 +167,6 @@ public class PlayerCombat : MonoBehaviour {
                 Bomb();
             }
         }
-
-        // TEMPORARY CODE BELOW
-        if (Environment.debugMode)
-        {
-            if (Input.GetKeyDown(KeyCode.Plus))
-            {
-                playerHandler.power++;
-            }
-            if (Input.GetKeyDown(KeyCode.Minus))
-            {
-                playerHandler.power--;
-            }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().TriggerAttack();
-            }
-            if (Input.GetKeyUp(KeyCode.F))
-            {
-                GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().StopBulletLoop();
-            }
-            if (Input.GetKeyUp(KeyCode.V))
-            {
-                GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().MoveToNextAttackStage();
-            }
-        }
 	}
 
  
