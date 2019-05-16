@@ -39,6 +39,18 @@ public class DebugHandler : MonoBehaviour
                 GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().bossHealth = GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().healthTriggerPoint;
                 GameObject.Find("Eika Ebisu").GetComponent<BossHandler>().MoveToNextAttackStage();
             }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                bool isInvincible = Environment.playerHandler.isInvincible;
+                if (isInvincible)
+                {
+                    Environment.playerHandler.isInvincible = false;
+                }
+                else
+                {
+                    Environment.playerHandler.isInvincible = true;
+                }
+            }
         }
     }
 }

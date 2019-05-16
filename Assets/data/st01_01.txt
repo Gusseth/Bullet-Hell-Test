@@ -11,21 +11,21 @@ function proc0{
 	sleep(30);
 
 	mode(other);
-	print("‰½‚¾‚ë‚¤");
-	print("‹v‚µ‚Ô‚è‚È‚ñ‚Å’²q‚ª‚»‚±‚»‚±‚¾‚º");
+	print("ä½•ã ã‚ã†");
+	print("ä¹…ã—ã¶ã‚Šãªã‚“ã§èª¿å­ãŒãã“ãã“ã ãœ");
 	enter_sleep(600);
 	sleep(4);
 
 	call_boss();
 	mode(player);
-	print("‚¢‚«‚È‚è‹­‚¢“z‚Æ‚©o‚Ä‚«‚Ä‚­‚ê‚È‚¢‚©‚Ë‚¥");
+	print("ã„ããªã‚Šå¼·ã„å¥´ã¨ã‹å‡ºã¦ãã¦ãã‚Œãªã„ã‹ã­ã‡");
 	enter_sleep(600);
 	sleep(4);
 
 	mode(other);
 	unknown11();
 	mode(enemy);
-	print("•ª‚Æ—]—T‚¾–");
+	print("éšåˆ†ã¨ä½™è£•ã äº‹");
 	sleep(60);
 
 	enable_img(enemy, 0);
@@ -35,7 +35,7 @@ function proc0{
 	image_change(player, 1);
 	mode(enemy);
 	play_bgm();
-	print("—d‰ö‚É‹¯‚¦‚È‚ª‚çs“®‚·‚élŠÔ‚Ì•È‚É");
+	print("å¦–æ€ªã«æ€¯ãˆãªãŒã‚‰è¡Œå‹•ã™ã‚‹äººé–“ã®ç™–ã«");
 	sleep(4);
 
 	enter_sleep(600);
@@ -43,7 +43,7 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("—d‰öˆÈŠO‚É‚à‹¯‚¦‚é‚º");
+	print("å¦–æ€ªä»¥å¤–ã«ã‚‚æ€¯ãˆã‚‹ãœ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -51,8 +51,8 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("‚ ‚ñ‚½‚ªŒü‚©‚¨‚¤‚Æ‚µ‚Ä‚¢‚éêŠ‚É‚¢‚é");
-	print("—d‰ö‚ÍA¡‚Ü‚Å‚Ì—d‰ö‚Æ‚Í–ó‚ªˆá‚¤‚í‚æ");
+	print("ã‚ã‚“ãŸãŒå‘ã‹ãŠã†ã¨ã—ã¦ã„ã‚‹å ´æ‰€ã«ã„ã‚‹");
+	print("å¦–æ€ªã¯ã€ä»Šã¾ã§ã®å¦–æ€ªã¨ã¯è¨³ãŒé•ã†ã‚ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -60,8 +60,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("‚»‚ê‚ÍŠy‚µ‚İ‚¾‚È");
-	print("‚¨‘O‚à—d‰ö‚æ‚è‹­‚¢‚ñ‚¾‚ë‚¤H");
+	print("ãã‚Œã¯æ¥½ã—ã¿ã ãª");
+	print("ãŠå‰ã‚‚å¦–æ€ªã‚ˆã‚Šå¼·ã„ã‚“ã ã‚ã†ï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -69,8 +69,8 @@ function proc0{
 
 	image_change(player, 1);
 	mode(enemy);
-	print("„‚Í‚½‚¾‚Ì”ª•S–œ•ª‚Ìˆê‚Ì_");
-	print("‚±‚Ìæ‚ÍA_—l‚ª‚²‚ë‚²‚ë‚µ‚Ä‚¢‚é‚ñ‚¾‚©‚ç");
+	print("ç§ã¯ãŸã ã®å…«ç™¾ä¸‡åˆ†ã®ä¸€ã®ç¥");
+	print("ã“ã®å…ˆã¯ã€ç¥æ§˜ãŒã”ã‚ã”ã‚ã—ã¦ã„ã‚‹ã‚“ã ã‹ã‚‰");
 	sleep(4);
 
 	enter_sleep(600);
@@ -91,7 +91,7 @@ function proc1{
 	sleep(30);
 
 	mode(other);
-	print("‚±‚¢‚Â‚İ‚½‚¢‚È“z‚ª‚²‚ë‚²‚ë‚µ‚Ä‚¢‚é‚Ì‚©");
+	print("ã“ã„ã¤ã¿ãŸã„ãªå¥´ãŒã”ã‚ã”ã‚ã—ã¦ã„ã‚‹ã®ã‹");
 	sleep(4);
 
 	enter_sleep(600);
@@ -99,7 +99,7 @@ function proc1{
 
 	call_boss();
 	mode(player);
-	print("—]‚èŠú‘Ò‚Å‚«‚È‚¢‚È");
+	print("ä½™ã‚ŠæœŸå¾…ã§ããªã„ãª");
 	sleep(4);
 
 	enter_sleep(600);

@@ -17,22 +17,22 @@ function proc0{
 
 	image_change(player, 7);
 	mode(enemy);
-	print("‚ ‚â‚â‚â‚â");
+	print("ã‚ã‚„ã‚„ã‚„ã‚„");
 	enter_sleep(600);
 	sleep(4);
 
 	image_change(player, 7);
 	mode(enemy);
 	play_bgm();
-	print("N“üÒ‚Ì•ñ‚Å—ˆ‚Ä‚İ‚ê‚Î");
-	print("‚Ü‚³‚©‹M•û‚Æ‚Ícc");
+	print("ä¾µå…¥è€…ã®å ±å‘Šã§æ¥ã¦ã¿ã‚Œã°");
+	print("ã¾ã•ã‹è²´æ–¹ã¨ã¯â€¦â€¦");
 	enter_sleep(600);
 	sleep(4);
 
 	call_boss();
 	mode(player);
-	print("•Ê‚É‚ ‚ñ‚½‚ç“V‹ç‚É—p–‚ª‚ ‚é–ó‚¶‚á‚È‚¢‚í");
-	print("‚Ç‚¢‚Ä‚æ");
+	print("åˆ¥ã«ã‚ã‚“ãŸã‚‰å¤©ç‹—ã«ç”¨äº‹ãŒã‚ã‚‹è¨³ã˜ã‚ƒãªã„ã‚");
+	print("ã©ã„ã¦ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -40,8 +40,8 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("N“üÒ‚Ì•ñ‚ğó‚¯‚Ä");
-	print("‰½ŒÌ‚©„‚ªŒÄ‚Ño‚³‚ê‚½‚Ì‚æ");
+	print("ä¾µå…¥è€…ã®å ±å‘Šã‚’å—ã‘ã¦");
+	print("ä½•æ•…ã‹ç§ãŒå‘¼ã³å‡ºã•ã‚ŒãŸã®ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -49,7 +49,7 @@ function proc0{
 
 	image_change(player, 6);
 	mode(enemy);
-	print("„‚Í‚½‚¾‚ÌV•·‹LÒ‚È‚Ì‚É‚Ë‚¥");
+	print("ç§ã¯ãŸã ã®æ–°èè¨˜è€…ãªã®ã«ã­ã‡");
 	sleep(4);
 
 	enter_sleep(600);
@@ -57,7 +57,7 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("‰½‚ªŒ¾‚¢‚½‚¢‚ÌH");
+	print("ä½•ãŒè¨€ã„ãŸã„ã®ï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -65,8 +65,8 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("‹M•û‚Ì–‚ğˆê”Ô—Ç‚­’m‚Á‚Ä‚¢‚é‚Ì‚ª");
-	print("„‚¾‚©‚ç");
+	print("è²´æ–¹ã®äº‹ã‚’ä¸€ç•ªè‰¯ãçŸ¥ã£ã¦ã„ã‚‹ã®ãŒ");
+	print("ç§ã ã‹ã‚‰");
 	sleep(4);
 
 	enter_sleep(600);
@@ -74,8 +74,8 @@ function proc0{
 
 	image_change(player, 5);
 	mode(enemy);
-	print("‹M•û‚Ì‘Š’k–‚É‚àæ‚ê‚é‚©‚à‚µ‚ê‚È‚¢‚Á‚Ä");
-	print("ãi‚Ìˆ‚ÈŒv‚ç‚¢‚Ë");
+	print("è²´æ–¹ã®ç›¸è«‡äº‹ã«ã‚‚ä¹—ã‚Œã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã£ã¦");
+	print("ä¸Šå¸ã®ç²‹ãªè¨ˆã‚‰ã„ã­");
 	sleep(4);
 
 	enter_sleep(600);
@@ -83,8 +83,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("‚³‚Á‚«‚àŒ¾‚Á‚½‚¯‚Ç“V‹ç‚É‚Í—p–‚Í‚È‚¢‚í");
-	print("R‚É‹‚é_—l‚É‰ï‚¢‚½‚¢‚Ì");
+	print("ã•ã£ãã‚‚è¨€ã£ãŸã‘ã©å¤©ç‹—ã«ã¯ç”¨äº‹ã¯ãªã„ã‚");
+	print("å±±ã«å±…ã‚‹ç¥æ§˜ã«ä¼šã„ãŸã„ã®");
 	sleep(4);
 
 	enter_sleep(600);
@@ -92,7 +92,7 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("R‚Ì_—lH");
+	print("å±±ã®ç¥æ§˜ï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -100,8 +100,8 @@ function proc0{
 
 	image_change(player, 5);
 	mode(enemy);
-	print("‚Í‚Í`‚ñ");
-	print("‚³‚Ä‚Í‚ ‚Ì_—l‚Ì–‚©‚ÈH");
+	print("ã¯ã¯ï½ã‚“");
+	print("ã•ã¦ã¯ã‚ã®ç¥æ§˜ã®äº‹ã‹ãªï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -109,7 +109,7 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("‰½‚©’m‚Á‚Ä‚é‚ÌH");
+	print("ä½•ã‹çŸ¥ã£ã¦ã‚‹ã®ï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -117,7 +117,7 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("Å‹ßA“V‹ç‚àè‚ğÄ‚­_—l‚ªZ‚İ’…‚¢‚½‚Ì‚æ");
+	print("æœ€è¿‘ã€å¤©ç‹—ã‚‚æ‰‹ã‚’ç„¼ãç¥æ§˜ãŒä½ã¿ç€ã„ãŸã®ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -125,7 +125,7 @@ function proc0{
 
 	image_change(player, 6);
 	mode(enemy);
-	print("‚Ç‚ñ‚Ç‚ñ‚ÆR‚ğ©•ª‚Ì•¨‚É‚µ‚æ‚¤‚Æ‚·‚é‚µcc");
+	print("ã©ã‚“ã©ã‚“ã¨å±±ã‚’è‡ªåˆ†ã®ç‰©ã«ã—ã‚ˆã†ã¨ã™ã‚‹ã—â€¦â€¦");
 	sleep(4);
 
 	enter_sleep(600);
@@ -133,8 +133,8 @@ function proc0{
 
 	image_change(player, 5);
 	mode(enemy);
-	print("Å‹ß‚Í˜[‚É‚Ü‚Å~‚è‚ÄM‹Â‚ğW‚ß‚æ‚¤‚Æ");
-	print("‚µ‚Ä‚¢‚éA‚Á‚ÄŒ¾‚¤˜b‚¾‚µcc");
+	print("æœ€è¿‘ã¯éº“ã«ã¾ã§é™ã‚Šã¦ä¿¡ä»°ã‚’é›†ã‚ã‚ˆã†ã¨");
+	print("ã—ã¦ã„ã‚‹ã€ã£ã¦è¨€ã†è©±ã ã—â€¦â€¦");
 	sleep(4);
 
 	enter_sleep(600);
@@ -142,7 +142,7 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("ccM‹Â‚ğW‚ß‚Ä‚¢‚é");
+	print("â€¦â€¦ä¿¡ä»°ã‚’é›†ã‚ã¦ã„ã‚‹");
 	sleep(4);
 
 	enter_sleep(600);
@@ -150,8 +150,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("‚«‚Á‚ÆA‚»‚¢‚Â‚¾‚í");
-	print("‚»‚¢‚Â‚É‰ï‚¢‚½‚¢‚ÌB‰½ˆ‚É‚¢‚éH");
+	print("ãã£ã¨ã€ãã„ã¤ã ã‚");
+	print("ãã„ã¤ã«ä¼šã„ãŸã„ã®ã€‚ä½•å‡¦ã«ã„ã‚‹ï¼Ÿ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -159,8 +159,8 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("’²q‚Éæ‚é‚æ‚¤‚¾‚Á‚½‚çA“V‹ç’B‚ª“|‚·‚Â‚à‚è");
-	print("‚¾‚Á‚½‚Ì‚ÅA‹M•û‚ªs‚­•K—v‚Í‚È‚¢‚í");
+	print("èª¿å­ã«ä¹—ã‚‹ã‚ˆã†ã ã£ãŸã‚‰ã€å¤©ç‹—é”ãŒå€’ã™ã¤ã‚‚ã‚Š");
+	print("ã ã£ãŸã®ã§ã€è²´æ–¹ãŒè¡Œãå¿…è¦ã¯ãªã„ã‚");
 	sleep(4);
 
 	enter_sleep(600);
@@ -168,8 +168,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("ÜŠp‚±‚±‚Ü‚Å—ˆ‚½‚ñ‚¾‚©‚çA—Ç‚¢‚¶‚á‚È‚¢‚Ì");
-	print("‚»‚Ì_—l‚Ì‹‚éŠ‚Ü‚Å˜A‚ê‚Äs‚Á‚Ä‚æ");
+	print("æŠ˜è§’ã“ã“ã¾ã§æ¥ãŸã‚“ã ã‹ã‚‰ã€è‰¯ã„ã˜ã‚ƒãªã„ã®");
+	print("ãã®ç¥æ§˜ã®å±…ã‚‹æ‰€ã¾ã§é€£ã‚Œã¦è¡Œã£ã¦ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -177,7 +177,7 @@ function proc0{
 
 	image_change(player, 6);
 	mode(enemy);
-	print("‚Å‚àA„‚Í‹M•û‚ğ’Ê‚·–ó‚És‚©‚È‚¢‚Ì");
+	print("ã§ã‚‚ã€ç§ã¯è²´æ–¹ã‚’é€šã™è¨³ã«è¡Œã‹ãªã„ã®");
 	unknown18();
 	sleep(4);
 
@@ -186,8 +186,8 @@ function proc0{
 
 	image_change(player, 5);
 	mode(enemy);
-	print("„‚ª‚ ‚Á‚³‚è’Ê‚µ‚¿‚á‚Á‚½‚ç");
-	print("Œ©‰ñ‚è“V‹ç’B‚à”[“¾‚ª‚¢‚©‚È‚¢‚©‚ç‚Ë");
+	print("ç§ãŒã‚ã£ã•ã‚Šé€šã—ã¡ã‚ƒã£ãŸã‚‰");
+	print("è¦‹å›ã‚Šå¤©ç‹—é”ã‚‚ç´å¾—ãŒã„ã‹ãªã„ã‹ã‚‰ã­");
 	sleep(4);
 
 	enter_sleep(600);
@@ -195,8 +195,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("–Ê“|‚Èí‘°‚Ë");
-	print("“V‹ç‚Á‚Ä");
+	print("é¢å€’ãªç¨®æ—ã­");
+	print("å¤©ç‹—ã£ã¦");
 	sleep(4);
 
 	enter_sleep(600);
@@ -204,8 +204,8 @@ function proc0{
 
 	image_change(player, 5);
 	mode(enemy);
-	print("‘gD‚É‘®‚·‚é‚Á‚Ä‚Ì‚Í");
-	print("©•ª‚ÌˆÓv‚¾‚¯‚Å‚Í“®‚¯‚È‚­‚È‚é‚Á‚Ä–‚æ");
+	print("çµ„ç¹”ã«å±ã™ã‚‹ã£ã¦ã®ã¯");
+	print("è‡ªåˆ†ã®æ„æ€ã ã‘ã§ã¯å‹•ã‘ãªããªã‚‹ã£ã¦äº‹ã‚ˆ");
 	sleep(4);
 
 	enter_sleep(600);
@@ -213,8 +213,8 @@ function proc0{
 
 	image_change(player, 0);
 	mode(enemy);
-	print("‚³‚ Aè‰ÁŒ¸‚µ‚Ä‚ ‚°‚é‚©‚ç");
-	print("–{‹C‚ÅŠ|‚©‚Á‚Ä‚«‚È‚³‚¢I");
+	print("ã•ã‚ã€æ‰‹åŠ æ¸›ã—ã¦ã‚ã’ã‚‹ã‹ã‚‰");
+	print("æœ¬æ°—ã§æ›ã‹ã£ã¦ããªã•ã„ï¼");
 	sleep(4);
 
 	enter_sleep(600);
@@ -222,8 +222,8 @@ function proc0{
 
 	call_boss();
 	mode(player);
-	print("è‰ÁŒ¸‚Í‚ ‚è‚ª‚½‚¢‚¯‚Çcc");
-	print("‚¾‚Á‚½‚ç’Ê‚µ‚Ä‚­‚ê‚ê‚Î—Ç‚¢‚Ì‚É");
+	print("æ‰‹åŠ æ¸›ã¯ã‚ã‚ŠãŒãŸã„ã‘ã©â€¦â€¦");
+	print("ã ã£ãŸã‚‰é€šã—ã¦ãã‚Œã‚Œã°è‰¯ã„ã®ã«");
 	sleep(4);
 
 	enter_sleep(600);
@@ -245,14 +245,14 @@ function proc1{
 	sleep(30);
 
 	mode(other);
-	print("‚Ü‚¶‚ß‚Éí‚Á‚½–‚Á‚Ä–w‚Ç–³‚©‚Á‚½‚¯‚Ç");
-	print("—\‘zˆÈã‚Ì‹­‚³‚¾‚Á‚½‚í");
+	print("ã¾ã˜ã‚ã«æˆ¦ã£ãŸäº‹ã£ã¦æ®†ã©ç„¡ã‹ã£ãŸã‘ã©");
+	print("äºˆæƒ³ä»¥ä¸Šã®å¼·ã•ã ã£ãŸã‚");
 	enter_sleep(600);
 	sleep(4);
 
 	image_change(player, 8);
 	mode(enemy);
-	print("‚±‚ê‚È‚çA‚ ‚Ì–ï‰î‚È_—l‚à“|‚¹‚é‚©‚à‚Ë");
+	print("ã“ã‚Œãªã‚‰ã€ã‚ã®å„ä»‹ãªç¥æ§˜ã‚‚å€’ã›ã‚‹ã‹ã‚‚ã­");
 	sleep(4);
 
 	enter_sleep(600);
@@ -260,14 +260,14 @@ function proc1{
 
 	call_boss();
 	mode(player);
-	print("‚³‚ A‚»‚Ì_—l‚ÌŠ‚Ü‚ÅˆÄ“à‚µ‚ÄI");
+	print("ã•ã‚ã€ãã®ç¥æ§˜ã®æ‰€ã¾ã§æ¡ˆå†…ã—ã¦ï¼");
 	enter_sleep(600);
 	sleep(4);
 
 	image_change(player, 8);
 	mode(enemy);
-	print("‚»‚Ì_—l‚ÍA­‚µ‘O‚É_Ğ‚ÆŒÎ‚²‚Æ");
-	print("ˆø‰z‚µ‚Ä‚«‚½‚Ì");
+	print("ãã®ç¥æ§˜ã¯ã€å°‘ã—å‰ã«ç¥ç¤¾ã¨æ¹–ã”ã¨");
+	print("å¼•è¶Šã—ã¦ããŸã®");
 	sleep(4);
 
 	enter_sleep(600);
@@ -275,8 +275,8 @@ function proc1{
 
 	image_change(player, 8);
 	mode(enemy);
-	print("‚±‚Ìæ‚ÉV‚µ‚¢_Ğ‚ªo—ˆ‚Ä‚¢‚é‚Ì‚æ");
-	print("‚»‚±‚É‹‚é‚Í‚¸‚¾‚í");
+	print("ã“ã®å…ˆã«æ–°ã—ã„ç¥ç¤¾ãŒå‡ºæ¥ã¦ã„ã‚‹ã®ã‚ˆ");
+	print("ãã“ã«å±…ã‚‹ã¯ãšã ã‚");
 	sleep(4);
 
 	enter_sleep(600);
@@ -284,8 +284,8 @@ function proc1{
 
 	call_boss();
 	mode(player);
-	print("R‚Ìã‚É_ĞH");
-	print("_Ğ‚Í‚¤‚¿‚¾‚¯‚¶‚á–³‚©‚Á‚½‚Ì‚©‚È‚Ÿcc");
+	print("å±±ã®ä¸Šã«ç¥ç¤¾ï¼Ÿ");
+	print("ç¥ç¤¾ã¯ã†ã¡ã ã‘ã˜ã‚ƒç„¡ã‹ã£ãŸã®ã‹ãªãâ€¦â€¦");
 	sleep(4);
 
 	enter_sleep(600);

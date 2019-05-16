@@ -15,7 +15,7 @@ public class Environment : MonoBehaviour {
     // Technical variables //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /// <summary> The name of the executable, and the game. </summary>
-    public readonly static string gameName = "Touhou 17 - Mountain of Debugging";
+    public readonly static string gameName = "Touhou 18 - Mountain of Debugging";
 
     /// <summary> The current version of this build. </summary>
     public readonly static string version = "v0.02b-dev";
@@ -175,16 +175,30 @@ public class Environment : MonoBehaviour {
     public static void SpawnItem(Item.ItemType item, GameObject target, bool spread = true, float startVelocity = 0)
     {
         SpawnItem(item, target.transform.position, spread, startVelocity);
-    } 
+    }
 
     /// <summary>
     /// Clears all bullets in the screen.
     /// </summary>
-    public static void ClearAllShots()
+    /// <param name="includingPlayerShots">Set to true if all shots should be cleared indiscriminately.</param>
+    public static void ClearAllShots(bool includingPlayerShots = false)
     {
-        foreach (GameObject shot in GameObject.FindGameObjectsWithTag("Shot"))
+        if (!includingPlayerShots)
         {
-            shot.GetComponent<ShotHandler>().OnShotNullified();
+            foreach (GameObject shot in GameObject.FindGameObjectsWithTag("Shot"))
+            {
+                if (shot.layer == LayerMask.NameToLayer("EnemyShot"))
+                {
+                    shot.GetComponent<ShotHandler>().OnShotNullified();
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject shot in GameObject.FindGameObjectsWithTag("Shot"))
+            {
+                shot.GetComponent<ShotHandler>().OnShotNullified();
+            }
         }
     }
 
@@ -199,6 +213,11 @@ public class Environment : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Returns the appropriate displacement of a shot based on the speed given.
+    /// </summary>
+    /// <param name="speed"></param>
+    /// <returns></returns>
     public static Vector3 CalculateShotDisplacement(float speed)
     {
         return Vector3.up * speed * Time.deltaTime;
