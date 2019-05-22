@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BossHandler
+    - DebugHandler
     - DebugShotSpawner
     - EntityHandler
     - Environment
@@ -15,15 +16,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
-    UnityEditor.TestRunner.dll:
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -70,41 +66,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9240}
     - Class: 114
-      Script: {instanceID: 9294}
+      Script: {instanceID: 9272}
     - Class: 114
       Script: {instanceID: 9296}
     - Class: 114
-      Script: {instanceID: 9336}
+      Script: {instanceID: 9298}
     - Class: 114
-      Script: {instanceID: 9352}
+      Script: {instanceID: 9338}
     - Class: 114
-      Script: {instanceID: 9356}
+      Script: {instanceID: 9354}
     - Class: 114
-      Script: {instanceID: 9672}
+      Script: {instanceID: 9358}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9804}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9812}
+      Script: {instanceID: 9806}
     - Class: 114
-      Script: {instanceID: 9898}
+      Script: {instanceID: 9814}
     - Class: 114
-      Script: {instanceID: 9912}
+      Script: {instanceID: 9900}
     - Class: 114
-      Script: {instanceID: 10108}
+      Script: {instanceID: 9914}
     - Class: 114
-      Script: {instanceID: 10226}
+      Script: {instanceID: 10110}
     - Class: 114
-      Script: {instanceID: 10372}
+      Script: {instanceID: 10228}
     - Class: 114
-      Script: {instanceID: 10394}
+      Script: {instanceID: 10374}
     - Class: 114
-      Script: {instanceID: 10422}
+      Script: {instanceID: 10396}
     - Class: 114
-      Script: {instanceID: 10788}
+      Script: {instanceID: 10424}
     - Class: 114
-      Script: {instanceID: 10892}
+      Script: {instanceID: 10790}
+    - Class: 114
+      Script: {instanceID: 10894}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -142,6 +140,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DebugHandler
   - hash:
       serializedVersion: 2
       Hash: 5bd9a19c7b5f76c563418e28f48a561b
@@ -388,6 +392,18 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkTransform
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: CallbackExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Editor
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -822,7 +838,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 7a3516809b18549886cafe274034cd78
+      Hash: ec43c8f48222afac24577108db4f6a58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BossHandler
@@ -955,4 +971,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: E:/Bullet Hell Test/Executable/Bullet Hell Test.exe
+  playerPath: E:/Bullet Hell Test Builds/Latest/Bullet Hell Test.exe

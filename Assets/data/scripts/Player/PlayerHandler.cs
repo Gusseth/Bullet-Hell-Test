@@ -129,16 +129,16 @@ public class PlayerHandler : MonoBehaviour {
     /// </summary>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.GetComponent<EntityHandler>())
+        if (collision.gameObject.tag == "Entity" || collision.gameObject.tag == "Boss")
         {
             if (!isInvincible)
             {
                 // If the player is not invincible, the death cycle is called.
                 OnHit(collision.gameObject);
             }
-            else
+            else if (collision.gameObject.tag == "Entity")
             {
-                // Otherwise, if the player is invincible, the enemy dies instead.
+                // Otherwise, if the player is invincible and the enemy is not a boss, the enemy dies instead.
                 collision.gameObject.SendMessage("OnHit", new HitData(gameObject));
             }
         }

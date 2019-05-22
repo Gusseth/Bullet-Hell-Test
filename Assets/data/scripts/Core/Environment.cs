@@ -98,8 +98,8 @@ public class Environment : MonoBehaviour {
     /// <param name="position"> The vector to be clamped. </param>
     public static Vector2 ClampPositionToCamera(Vector2 position)
     {
-        Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(Vector2.zero);
-        Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight));
+        Vector2 bottomLeft = Camera.main.ViewportToWorldPoint(Vector2.zero);
+        Vector2 topRight = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
 
         Vector2 resultVector = new Vector2(Mathf.Clamp(position.x, bottomLeft.x, topRight.x), Mathf.Clamp(position.y, bottomLeft.y, topRight.y));
         return resultVector;
@@ -223,7 +223,21 @@ public class Environment : MonoBehaviour {
         return Vector3.up * speed * Time.deltaTime;
     }
 
-    // Public Static IEnumerators
+    /// <summary>
+    /// Mapping function similar to the one found in my previous game, Cold Front, and Processing.
+    /// </summary>
+    /// <param name="value">The value to be mapped.</param>
+    /// <param name="min1">The minimum value of the starting reference.</param>
+    /// <param name="max1">The maximum value of the starting reference.</param>
+    /// <param name="min2">The minimum value of the new reference.</param>
+    /// <param name="max2">The maximum value of the new reference.</param>
+    /// <returns></returns>
+    public static float Map(float value, float min1, float max1, float min2, float max2)
+    {
+        return (value - min1) * (max2 - min2) / (max1 - min1) + min2;
+    }
+
+// Public Static IEnumerators
 
     /// <summary>
     /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
@@ -238,7 +252,7 @@ public class Environment : MonoBehaviour {
     }
 
     /// <summary>
-    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})'' to do so.
+    /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
     /// </summary>
     /// <param name="seconds">Delay added in seconds as an integer.</param>
     /// <param name="method">Insert lines of code to run after the delay has elapsed. Use 'delegate {code}'.</param>
@@ -286,6 +300,7 @@ public class Environment : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                // Resets the scene
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }

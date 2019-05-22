@@ -138,6 +138,11 @@ public class AttackStage : List<PatternBase>
     public List<PatternBase> Stage = new List<PatternBase>();
 
     /// <summary>
+    /// The items dropped once the AttackStage is over.
+    /// </summary>
+    public List<Item.ItemType> LootTable = new List<Item.ItemType>();
+
+    /// <summary>
     /// Constructs an attack stage from the given list of patterns.
     /// </summary>
     /// <param name="name">The name of this attack.</param>

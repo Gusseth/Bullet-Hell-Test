@@ -9,6 +9,12 @@ public class BossHandler : MonoBehaviour {
 
     // Variable Declaration
 
+    /// <summary> The name of the boss. </summary>
+    public string bossName;
+
+    /// <summary> The name of the boss in Japanese. </summary>
+    public string bossNameJP;
+
     /// <summary> The boss' health. </summary>
     public float bossHealth;
 
@@ -23,6 +29,9 @@ public class BossHandler : MonoBehaviour {
 
     /// <summary> True if a spellcard is activated. </summary>
     public bool isInvincible = false;
+
+    /// <summary> True if the boss' death function is triggered.. </summary>
+    public bool isDead = false; // Is this always true for undead bosses?
 
     /// <summary> The health threshold that will trigger a switch in the boss' Attack Stage. </summary>
     public float healthTriggerPoint;
@@ -82,8 +91,16 @@ public class BossHandler : MonoBehaviour {
     {
         StopBulletLoop();
         Environment.ClearAllShots();
+
+        foreach (Item.ItemType item in AttackTable[0].LootTable)
+        {
+            // Spawns in every item in the loot table
+            Environment.SpawnItem(item, transform.position);
+        }
+
         try
         {
+            // Try removing the current attack stage
             AttackTable.Remove(AttackTable[0]);
             isInvincible = true;
             spellcardActive = AttackTable[0].isSpellcard;
@@ -96,6 +113,7 @@ public class BossHandler : MonoBehaviour {
             IEnumerator smallDelay = Environment.AddDelay(3,
             delegate
             {
+                // This part will only error out with an ArgumentOutOfRangeException if the attack table is empty, triggering the catch statement below
                 previousTriggerPoint = healthTriggerPoint;
                 healthTriggerPoint = AttackTable[0].healthTriggerPoint;
                 isInvincible = false;
@@ -105,10 +123,13 @@ public class BossHandler : MonoBehaviour {
         }
         catch (System.ArgumentOutOfRangeException)
         {
+            // If the boss dies...
+            isDead = true;
+            Destroy(GetComponent<CircleCollider2D>());
+            Debug.Log(bossName + " has been defeated!");
             Environment.PlaySound(Audio.sfx.bossDeath, Environment.sfxVolume * .4F);
             Vector3 pos = transform.position;
             Destroy(gameObject, 1);
-            Environment.SpawnItem(Item.ItemType.life, pos);
         }
     }
 
