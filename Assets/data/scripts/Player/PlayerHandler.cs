@@ -52,9 +52,6 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary> Backend variable. Linear interpolation delta time. DO not touch this, please. </summary>
     private float lerpTime = 0;
 
-    /// <summary> Point multiplier. Use this to anything that adds points. </summary>
-    protected float pointMultiplier = 1.0F;
-
     // Conditional Variables ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /// <summary> Returns true if the player is alive. False if not. </summary>
@@ -150,7 +147,7 @@ public class PlayerHandler : MonoBehaviour {
     private void Kill()
     {
         lives--;
-        power *= .64F ;
+        power = Mathf.Clamp(power - 1, 0, player.maxPower);
         Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
         Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
         Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
@@ -235,32 +232,32 @@ public class PlayerHandler : MonoBehaviour {
         {
             case Item.ItemType.smallPower:
                 AddPower(0.01F);
-                AddScore(10000);
+                AddScore(100);
                 Environment.PlaySound(Audio.sfx.itemPickup);
                 break;
             case Item.ItemType.bigPower:
                 AddPower(0.05F);
-                AddScore(100000);
+                AddScore(1000);
                 Environment.PlaySound(Audio.sfx.itemPickup);
                 break;
             case Item.ItemType.point:
                 points++;
-                AddScore(100000);
+                AddScore(10000);
                 Environment.PlaySound(Audio.sfx.itemPickup);
                 break;
             case Item.ItemType.bomb:
                 bombs++;
-                AddScore(1000000);
+                AddScore(1000);
                 Environment.PlaySound(Audio.sfx.extend);
                 break;
             case Item.ItemType.life:
                 lives++;
-                AddScore(5000000);
+                AddScore(1000);
                 Environment.PlaySound(Audio.sfx.extend);
                 break;
             case Item.ItemType.fullPower:
                 AddPower(player.maxPower);
-                AddScore(500000);
+                AddScore(5000);
                 break;
             default:
                 Debug.Log("PlayerHalder.AddItem() was called with an invalid item. Did you somehow create a new item?");
@@ -283,7 +280,7 @@ public class PlayerHandler : MonoBehaviour {
     /// </summary>
     public void AddScore(int value)
     {
-        score += (ulong)(value * pointMultiplier);
+        score += (ulong)(value * GameManager.pointMultiplier);
     }
 
     /// <summary>
@@ -291,7 +288,7 @@ public class PlayerHandler : MonoBehaviour {
     /// </summary>
     public void AddScore(ulong value)
     {
-        score += (ulong)(value * pointMultiplier);
+        score += (ulong)(value * GameManager.pointMultiplier);
     }
 
     /// <summary>

@@ -112,6 +112,7 @@ public class PlayerCombat : MonoBehaviour {
     /// </summary>
     private void Bomb()
     {
+        playerHandler.bombs--;
         Debug.Log("Player has bombed. What a scrub.");
         playerHandler.canBomb = false;
         playerHandler.isBombing = true;

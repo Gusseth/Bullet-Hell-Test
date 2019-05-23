@@ -46,6 +46,9 @@ public class Environment : MonoBehaviour {
     /// <summary> The backend Core GameObject. </summary>
     public static GameObject core;
 
+    /// <summary> The GameManager GameObject. </summary>
+    public static GameObject gameManager;
+
     /// <summary> The PlayerHandler Monobehaviour attatched to the player. </summary>
     public static PlayerHandler playerHandler;
 
@@ -80,9 +83,6 @@ public class Environment : MonoBehaviour {
 
     /// <summary> Locks ALL input. </summary>
     public static bool lockAllInput = false;
-
-    /// <summary> The difficulty of the game. </summary>
-    public static Difficulty difficulty = Difficulty.Normal;
 
     /// <summary> Enumeration of all possible difficulties. </summary>
     public enum Difficulty
@@ -294,15 +294,5 @@ public class Environment : MonoBehaviour {
     {
         // Updates time
         time++;
-
-        // Debug mode things below
-        if (debugMode)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                // Resets the scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
     }
 }

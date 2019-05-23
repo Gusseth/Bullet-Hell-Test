@@ -14,6 +14,99 @@ TextureImporter:
   - first:
       213: 1301378362911056842
     second: willy beast gang bottom
+  - first:
+      213: -1962569551881545938
+    second: front00_fade
+  - first:
+      213: -5246873906108242764
+    second: easyModo
+  - first:
+      213: -2602986476971349181
+    second: normal
+  - first:
+      213: 5783834758061239140
+    second: hard
+  - first:
+      213: 5341542737831053299
+    second: lunatic
+  - first:
+      213: 3049249914847937227
+    second: extra
+  - first:
+      213: 3867656728742163808
+    second: bonusFailed
+  - first:
+      213: 5993038384930537587
+    second: front00_0
+  - first:
+      213: -8553493457889170370
+    second: heart0
+  - first:
+      213: -961556473347467464
+    second: front00_2
+  - first:
+      213: -6126914350318073409
+    second: bomb0
+  - first:
+      213: 2940506354964835080
+    second: spellcardBonus
+  - first:
+      213: 766394270444647025
+    second: itemBorderLine
+  - first:
+      213: -1699079312454494155
+    second: front00_6
+  - first:
+      213: -3764575205067117088
+    second: overdrive
+  - first:
+      213: -2468543969246358946
+    second: front00_17
+  - first:
+      213: -5495007381294748297
+    second: nextStage
+  - first:
+      213: -5829121595489667639
+    second: fullPowerUp
+  - first:
+      213: -3216666336106938698
+    second: hiScore
+  - first:
+      213: 5520745837570048371
+    second: extend
+  - first:
+      213: -3932873128700676661
+    second: heart1
+  - first:
+      213: -8977449192677747280
+    second: heart2
+  - first:
+      213: 2926678155525091266
+    second: heart3
+  - first:
+      213: -8610558048771330543
+    second: heart4
+  - first:
+      213: -900036432263920889
+    second: heart5
+  - first:
+      213: -4933267906134767202
+    second: bomb1
+  - first:
+      213: 2603769054893596027
+    second: bomb2
+  - first:
+      213: 5702091701313579867
+    second: bomb3
+  - first:
+      213: 883450295598366784
+    second: bomb4
+  - first:
+      213: -609849476737808983
+    second: bomb5
+  - first:
+      213: -8553493457889170370
+    second: front00_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -43,7 +136,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 2
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -186,6 +279,657 @@ TextureImporter:
       bones: []
       spriteID: a81d09f794aca9a45b667a3838bfffd3
       internalID: 1301378362911056842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_fade
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 0
+        width: 88
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 41, y: 0, z: 41, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04c14460729f4a4484961a894de1c7e
+      internalID: -1962569551881545938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easyModo
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 384
+        width: 77
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c45de68d04ca542b33a3f327df1427
+      internalID: -5246873906108242764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 352
+        width: 130
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19615d5158edd714babfe19cfb827ea3
+      internalID: -2602986476971349181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hard
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 320
+        width: 88
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9aaf1350b5ada4fa35eb35d243f8d1
+      internalID: 5783834758061239140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lunatic
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 288
+        width: 127
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c124fc3bf42c940ac650927f38e862
+      internalID: 5341542737831053299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extra
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 255
+        width: 98
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a44e1c672f18d47897729c531682f6
+      internalID: 3049249914847937227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonusFailed
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 192
+        width: 300
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0162a4a7bcdcbd418d68fdc5ba8860e
+      internalID: 3867656728742163808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_0
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 990
+        width: 165
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed678ef9787c964a9f07b9607b8fed9
+      internalID: 5993038384930537587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart0
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 991
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458bfe234ab04f24dbe2e8450e8d0b7c
+      internalID: -8553493457889170370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_2
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 916
+        width: 155
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038869bdc3549c54c868bcb979c03985
+      internalID: -961556473347467464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb0
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a751c7669f0bbe94ca27800d822fb7f9
+      internalID: -6126914350318073409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spellcardBonus
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 759
+        width: 453
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261ebb4c0bdfd754180f20e4ef378365
+      internalID: 2940506354964835080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: itemBorderLine
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 468
+        width: 307
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4149b11d3f336214e84b4b313b912890
+      internalID: 766394270444647025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_6
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 435
+        width: 332
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eceef02ee490604b96135a285c61b3f
+      internalID: -1699079312454494155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overdrive
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 255
+        width: 173
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc723aad98131c74f9575b902765c4ff
+      internalID: -3764575205067117088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_17
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 134
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bd5bda00e7ba144b6a977ae3dfc6f9
+      internalID: -2468543969246358946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nextStage
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 695
+        width: 414
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f61f8a0f9109534087f97520b5ec04e
+      internalID: -5495007381294748297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fullPowerUp
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 644
+        width: 280
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2274b8cff735fdc438d5f444da0dce68
+      internalID: -5829121595489667639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hiScore
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 583
+        width: 168
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c5197f838e87e4eb948343c3c81a34
+      internalID: -3216666336106938698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extend
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 517
+        width: 162
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cc8b648e6f362469ebdfaeb54c9d5a
+      internalID: 5520745837570048371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart1
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 991
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cc56f62c198c24ba92b286451355fc
+      internalID: -3932873128700676661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 991
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cc8d7e9fd3f1f4eb1510db69c86db6
+      internalID: -8977449192677747280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 991
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad861ef2a628fdc40bd367e660de6c31
+      internalID: 2926678155525091266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 991
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f679dbad2fbd34dbe45fa0eb4569f2
+      internalID: -8610558048771330543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart5
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 991
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9b3c42452223b4ea548d524ed0fe6e
+      internalID: -900036432263920889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb1
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8593778d8cc0ef2409c1adc465ad625c
+      internalID: -4933267906134767202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b218ddcaaaf3d478f7358dc6843f70
+      internalID: 2603769054893596027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330fbe741e1d2ef42be6b3d0c7b9a03c
+      internalID: 5702091701313579867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb4
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0a379a8ebbe234c84d14888968d7ed
+      internalID: 883450295598366784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb5
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121d4af10eca29140a91d010ba3a430b
+      internalID: -609849476737808983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front00_1
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 879
+        width: 98
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e9a6634a8e1244186d235846f9ce46
+      internalID: -8553493457889170370
       vertices: []
       indices: 
       edges: []
