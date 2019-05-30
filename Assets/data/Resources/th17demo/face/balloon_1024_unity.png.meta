@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: a4a786c86c85096418b8049375506526
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4448783482561149357
+    second: baloonNormal
+  - first:
+      213: 5135846276730066936
+    second: balloon_1024_unity_1
+  - first:
+      213: 537272674873980745
+    second: balloon_1024_unity_2
+  - first:
+      213: 5070355554403912898
+    second: balloonAngry
+  - first:
+      213: 3011105953624634507
+    second: balloon_1024_unity_4
+  - first:
+      213: 4960826381869440611
+    second: balloon_1024_unity_5
+  - first:
+      213: -7058709254646978665
+    second: balloon_1024_unity_6
+  - first:
+      213: -9015903511390706031
+    second: balloon_1024_unity_7
+  - first:
+      213: -9128303193983262184
+    second: balloonThink0
+  - first:
+      213: 7820312604297897838
+    second: balloon_1024_unity_9
+  - first:
+      213: 8425479920236635952
+    second: balloon_1024_unity_10
+  - first:
+      213: -856375164703955438
+    second: balloon_1024_unity_11
+  - first:
+      213: -8283837884309054346
+    second: balloonNormalBig
+  - first:
+      213: -6670933807552213289
+    second: balloon_1024_unity_13
+  - first:
+      213: 8267692279361734618
+    second: balloon_1024_unity_14
+  - first:
+      213: 7914003900352158673
+    second: balloon_1024_unity_15
+  - first:
+      213: 4088684590487245985
+    second: balloon_1024_unity_16
+  - first:
+      213: 5228665557048014213
+    second: balloon_1024_unity_17
+  - first:
+      213: -5453215566462255396
+    second: balloon_1024_unity_18
+  - first:
+      213: 2800110839066712425
+    second: balloon_1024_unity_19
+  - first:
+      213: 6733076606414376657
+    second: balloon_1024_unity_20
+  - first:
+      213: 6032103177598777429
+    second: balloon_1024_unity_21
+  - first:
+      213: -4058496613937389296
+    second: balloon_1024_unity_22
+  - first:
+      213: 5828840212637557691
+    second: balloon_1024_unity_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: baloonNormal
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 928
+        width: 106
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 45, y: 11, z: 30, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a11e12d6c979544a385edba108c54f
+      internalID: 4448783482561149357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_1
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 928
+        width: 40
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215b1cdc8b740d149930178699b8d195
+      internalID: 5135846276730066936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 927
+        width: 74
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b279c998f9055ee47bcaecf4c64876f5
+      internalID: 537272674873980745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonAngry
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 813
+        width: 172
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 59, y: 28, z: 51, w: 43}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c17d2b3344da5c4f8f661003aa23517
+      internalID: 5070355554403912898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 819
+        width: 40
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2ff2bd9e37c3f47b8a3b6f2c942bf4
+      internalID: 3011105953624634507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 816
+        width: 92
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2615aa6e9001049448320e1ed36badf2
+      internalID: 4960826381869440611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_7
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 784
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e440f11385b4bb54e8bdb195f876ae6d
+      internalID: -9015903511390706031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonThink0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 696
+        width: 125
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 66, y: 16, z: 28, w: 33}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed467c2e8f91ef4e8bea2557c38d2df
+      internalID: -9128303193983262184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_9
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 696
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f4b888b4e81e04a852654ae915c381
+      internalID: 7820312604297897838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 584
+        width: 118
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44092c651096a8c4a96b3adf5f224cba
+      internalID: 8425479920236635952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 584
+        width: 80
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6098c265ea15a664fa69e254bb07fe3f
+      internalID: -856375164703955438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonNormalBig
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 447
+        width: 115
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 53, y: 9, z: 36, w: 39}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fbbb24d49d8f24e8a6d1ef702cad88
+      internalID: -8283837884309054346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_13
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 448
+        width: 40
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41ae56819d953649b5066e3a6f96b92
+      internalID: -6670933807552213289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_14
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 447
+        width: 79
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44dc33385e3e6645aa2a67b54073e01
+      internalID: 8267692279361734618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 301
+        width: 144
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ef6476f927be84695468baf6f2fc94
+      internalID: 7914003900352158673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_16
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 307
+        width: 40
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd493c68df161541a2d1d6673b4433f
+      internalID: 4088684590487245985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_17
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 304
+        width: 92
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a624998328feaa45816e857f3080755
+      internalID: 5228665557048014213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_18
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 272
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6beed73663e2b274c82e4ab6bce1b944
+      internalID: -5453215566462255396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_19
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 272
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73de5b0a028485c4a894782642520e69
+      internalID: 2800110839066712425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 153
+        width: 122
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2ff0c58be7d354f9341a11b40428a3
+      internalID: 6733076606414376657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 153
+        width: 80
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6310a3160c1289c43a1de08b16b59318
+      internalID: 6032103177598777429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 9
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b95bb6541b77e4aaec6962d3ef9a90
+      internalID: -4058496613937389296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_1024_unity_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 9
+        width: 80
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb1a1c2b607d1f4c980bb00ad4e43ba
+      internalID: 5828840212637557691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c52e431d21672cd4bbe06447fc5691d4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

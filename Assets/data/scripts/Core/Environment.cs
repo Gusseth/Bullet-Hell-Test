@@ -47,7 +47,7 @@ public class Environment : MonoBehaviour {
     public static GameObject core;
 
     /// <summary> The GameManager GameObject. </summary>
-    public static GameObject gameManager;
+    public static GameManager gameManager;
 
     /// <summary> The PlayerHandler Monobehaviour attatched to the player. </summary>
     public static PlayerHandler playerHandler;
@@ -77,6 +77,9 @@ public class Environment : MonoBehaviour {
 
     /// <summary> Ticks passed since the beginning of the game, 1 tick = 1 frame. </summary>
     public static ulong time;
+
+    /// <summary> True of the game is paused. </summary>
+    public static bool isPaused;
 
     /// <summary> Locks displacement input, bombing, etc. </summary>
     public static bool lockInput = false;
@@ -112,6 +115,7 @@ public class Environment : MonoBehaviour {
     {
         camera = GameObject.Find("Main Camera");
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = core.GetComponent<GameManager>();
         playerHandler = player.GetComponent<PlayerHandler>();
         audioListener = camera.GetComponent<AudioListener>();
         bgmAudioSource = camera.GetComponents<AudioSource>()[0];
