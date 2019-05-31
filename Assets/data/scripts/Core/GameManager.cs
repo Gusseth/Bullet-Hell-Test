@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    // Variable Declarations
+// Variable Declarations
 
     /// <summary> Point multiplier. Use this to anything that adds points. </summary>
     public static float pointMultiplier = 1.0F;
@@ -14,9 +14,12 @@ public class GameManager : MonoBehaviour
     public static ulong hiScore;
 
     /// <summary> The difficulty of the game. </summary>
-    public static Environment.Difficulty difficulty = Environment.Difficulty.Normal;
+    public Environment.Difficulty difficulty;
 
-    // Public Functions and Methods
+    /// <summary> The difficulty of the game. </summary>
+    public Environment.Stage stage;
+
+ // Public Functions and Methods
 
     /// <summary>
     /// Pauses the game.
@@ -53,6 +56,23 @@ public class GameManager : MonoBehaviour
         Environment.isPaused = pause;
     }
 
+ // Public Static Methods and Functions
+
+    /// <summary>
+    /// Returns the current difficulty of the game.
+    /// </summary>
+    /// <returns>Game Difficulty</returns>
+    public static Environment.Difficulty GetDifficulty()
+    {
+        return Environment.gameManager.difficulty;
+    }
+
+    public static Environment.Stage GetStage()
+    {
+        return Environment.gameManager.stage;
+    }
+
+ // Private Functions and Methods
 
     /// <summary>
     /// Pauses the game when the window is unfocused.

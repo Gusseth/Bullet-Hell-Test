@@ -46,11 +46,14 @@ public class Environment : MonoBehaviour {
     /// <summary> The backend Core GameObject. </summary>
     public static GameObject core;
 
-    /// <summary> The GameManager GameObject. </summary>
+    /// <summary> The GameManager Monobehaviour. </summary>
     public static GameManager gameManager;
 
     /// <summary> The PlayerHandler Monobehaviour attatched to the player. </summary>
     public static PlayerHandler playerHandler;
+
+    /// <summary> The DialogueHandler Monobehaviour. </summary>
+    public static DialogueHandler dialogueHandler;
 
     /// <summary> The player GameObject. </summary>
     public static GameObject player;
@@ -63,6 +66,12 @@ public class Environment : MonoBehaviour {
 
     /// <summary> The main camera. </summary>
     public new static GameObject camera;
+
+    /// <summary> The main canvas. </summary>
+    public static GameObject mainCanvas;
+
+    /// <summary> The camera viewport canvas. </summary>
+    public static GameObject viewportCanvas;
 
     /// <summary> The Audio Listener attatched to the camera. </summary>
     public static AudioListener audioListener;
@@ -93,6 +102,12 @@ public class Environment : MonoBehaviour {
         EasyModo, Normal, Hard, Lunatic, Extra//, Phantasm, Phantasm2
     }
 
+    /// <summary> Enumeration of all possible stages. </summary>
+    public enum Stage
+    {
+        One = 1, Two, Three, Four, Five, Six, Extra
+    }
+
 // Public Static Methods and Functions
 
     /// <summary>
@@ -106,6 +121,61 @@ public class Environment : MonoBehaviour {
 
         Vector2 resultVector = new Vector2(Mathf.Clamp(position.x, bottomLeft.x, topRight.x), Mathf.Clamp(position.y, bottomLeft.y, topRight.y));
         return resultVector;
+    }
+
+    /// <summary>
+    /// Returns a Color value from the inputted 8-bit integer values.
+    /// </summary>
+    /// <param name="r">Red value between 0-255</param>
+    /// <param name="g">Green value between 0-255</param>
+    /// <param name="b">Blue value between 0-255</param>
+    /// <param name="a">Alpha or Transparency value between 0-255</param>
+    /// <returns></returns>
+    public static Color ColorInt(byte r, byte g, byte b, byte a)
+    {
+        return new Color(r / 255F, g / 255F, b / 255F, a / 255F);
+    }
+
+    /// <summary>
+    /// Returns a Color value from the inputted 8-bit integer values.
+    /// </summary>
+    /// <param name="r">Red value between 0-255</param>
+    /// <param name="g">Green value between 0-255</param>
+    /// <param name="b">Blue value between 0-255</param>
+    /// <returns></returns>
+    public static Color ColorInt(byte r, byte g, byte b)
+    {
+        return ColorInt(r, g, b, 255);
+    }
+
+    /// <summary>
+    /// Returns a child GameObject with the given name. 
+    /// </summary>
+    /// <param name="name">The name of the child to be found</param>
+    /// <param name="parent">The parent of the children</param>
+    /// <returns>GameObject Child</returns>
+    public static GameObject FindChild(string name, Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.parent.name == name)
+            {
+                return child.gameObject;
+            }
+        }
+        Debug.LogError("Cannot find " + name + " as a child of " + parent.name + "!");
+        return null;
+    }
+
+    /// <summary>
+    /// Returns a child GameObject with the given name. 
+    /// </summary>
+    /// <param name="name">The name of the child to be found</param>
+    /// <param name="parent">The parent of the children</param>
+    /// <returns>GameObject Child</returns>
+    public static GameObject FindChild(string name, GameObject parent)
+    {
+        return FindChild(name, parent.transform);
     }
 
     /// <summary>
@@ -284,12 +354,12 @@ public class Environment : MonoBehaviour {
     private void Awake()
     {
         PriorityInitialize();
-        camera = GameObject.Find("Main Camera");
         core = gameObject;
     }
 
     private void Start()
     {
+        mainCanvas = GameObject.Find("Main Canvas");
         ReloadAllEnvironmentVars();
         GameInit.Initialize();
     }

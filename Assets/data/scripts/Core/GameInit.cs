@@ -9,14 +9,32 @@ public class GameInit : MonoBehaviour
     /// <summary>
     /// The sole function in this script. Runs through the initialize protocols.
     /// </summary>
+
+    // Temporary Public Variables
+
     public static void Initialize()
     {
         // Private variables first
+        DialogueHandler dialogueHandler = GameObject.Find("Dialogue").GetComponent<DialogueHandler>();
         GameObject cullingBorder = GameObject.Find("Cull Boundary");
         PlayerHandler playerHandler = Environment.playerHandler;
 
         // Defines game variables that are to be assigned at this period
         Environment.cullBoundary = cullingBorder;
+        Environment.gameManager = Environment.core.GetComponent<GameManager>();
+        Environment.camera = GameObject.Find("Main Camera");
+        Environment.viewportCanvas = GameObject.Find("Window Canvas");
+
+        // Dialogue
+        Environment.dialogueHandler = dialogueHandler;
+        dialogueHandler.speechContainer = GameObject.Find("Speech Container");
+        dialogueHandler.playerBody = GameObject.Find("Player Body");
+        dialogueHandler.playerBalloon = GameObject.Find("Player Balloon");
+
+        dialogueHandler.enemyBody = GameObject.Find("Enemy Body");
+        dialogueHandler.enemyBalloon = GameObject.Find("Enemy Balloon");
+
+        dialogueHandler.bossTitleCard = GameObject.Find("Title Card");
 
         // Reset player statistics
         playerHandler.score = 0;

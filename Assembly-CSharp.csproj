@@ -85,6 +85,8 @@
     <Compile Include="Assets\data\scripts\Shot\ShotBase.cs" />
     <Compile Include="Assets\data\scripts\Shot\ShotHandler.cs" />
     <Compile Include="Assets\data\scripts\UI\BossHealthHandler.cs" />
+    <Compile Include="Assets\data\scripts\UI\DialogueHandler.cs" />
+    <Compile Include="Assets\data\scripts\UI\SpinElement.cs" />
     <Compile Include="Assets\data\scripts\UI\StatusHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
