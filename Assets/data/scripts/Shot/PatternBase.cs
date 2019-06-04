@@ -107,7 +107,7 @@ public class PatternBase : object
             shot.transform.Rotate(new Vector3(0, 0, shotRotation)); // Sets the direction of where this shot is headed.
             shot.GetComponent<ShotHandler>().displacement = Environment.CalculateShotDisplacement(shotSpeed); // Sets the rate in which the bullet displaces itself in world space.
         }
-        Environment.sfxAudioSource.PlayOneShot(Audio.Parse(soundEffect), Environment.sfxVolume * .4F); // Plays audio.
+        Environment.sfxAudioSource.PlayOneShot(Audio.Parse(soundEffect), Environment.sfxMasterVolume * .4F); // Plays audio.
     }
 }
 

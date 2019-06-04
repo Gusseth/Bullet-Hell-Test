@@ -107,7 +107,7 @@ public class BossHandler : MonoBehaviour {
 
             if (spellcardActive)
             {
-                Environment.PlaySound(Audio.sfx.spellcard, Environment.sfxVolume * .4F);
+                Environment.PlaySound(Audio.sfx.spellcard, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
             }
 
             IEnumerator smallDelay = Environment.AddDelay(3,
@@ -127,7 +127,7 @@ public class BossHandler : MonoBehaviour {
             isDead = true;
             Destroy(GetComponent<CircleCollider2D>());
             Debug.Log(bossName + " has been defeated!");
-            Environment.PlaySound(Audio.sfx.bossDeath, Environment.sfxVolume * .4F);
+            Environment.PlaySound(Audio.sfx.bossDeath, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
             Vector3 pos = transform.position;
             Destroy(gameObject, 1);
         }
@@ -147,8 +147,9 @@ public class BossHandler : MonoBehaviour {
                     {
                         if (bossHealth <= maxHealth / 5F)
                         {
+                            // When the boss' hp is only 1/5th of the healthbar, play a slightly different damage sound.
                             playDamageSound = false;
-                            Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                            Environment.PlaySound(Audio.sfx.damage1, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                             StartCoroutine(Environment.AddDelay(.1F,
                             delegate
                             {
@@ -157,8 +158,9 @@ public class BossHandler : MonoBehaviour {
                         }
                         else
                         {
+                            // Otherwise, play the default damage sound
                             playDamageSound = false;
-                            Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                            Environment.PlaySound(Audio.sfx.damage0, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                             StartCoroutine(Environment.AddDelay(.1F,
                             delegate
                             {
@@ -169,15 +171,16 @@ public class BossHandler : MonoBehaviour {
                 }
                 else
                 {
-                    // Else, it reduces damage by 1/24.
+                    // Else, if the spellcard only makes up a fraction of the health bar, it reduces damage by 1/24.
                     bossHealth = Mathf.Clamp(bossHealth - (data.damage / 24F), healthTriggerPoint, maxHealth);
 
                     if (playDamageSound)
                     {
                         if (bossHealth <= (healthTriggerPoint) + (previousTriggerPoint - healthTriggerPoint) / 5F)
                         {
+                            // When the boss' hp is only 1/5 of the healthbar with the reduced top health accounted for, play a slightly different damage sound.
                             playDamageSound = false;
-                            Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                            Environment.PlaySound(Audio.sfx.damage1, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                             StartCoroutine(Environment.AddDelay(.1F,
                             delegate
                             {
@@ -186,8 +189,9 @@ public class BossHandler : MonoBehaviour {
                         }
                         else
                         {
+                            // Otherwise, play the default damage sound.
                             playDamageSound = false;
-                            Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                            Environment.PlaySound(Audio.sfx.damage0, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                             StartCoroutine(Environment.AddDelay(.1F,
                             delegate
                             {
@@ -199,15 +203,16 @@ public class BossHandler : MonoBehaviour {
             }
             else
             {
-                // Else if the Attack Stage is a normal attack, no damage reduction is taken.
+                // Else if the Attack Stage is a normal attack, no damage reduction is accounted for.
                 bossHealth = Mathf.Clamp(bossHealth - data.damage, healthTriggerPoint, maxHealth);
 
                 if (playDamageSound)
                 {
                     if (bossHealth <= (healthTriggerPoint) + ((maxHealth - healthTriggerPoint) / 5F))
                     {
+                        // When the boss' hp is only 1/5 of the healthbar with the reduced bottom health accounted for, play a slightly different damage sound.
                         playDamageSound = false;
-                        Environment.PlaySound(Audio.sfx.damage1, Environment.sfxVolume * 0.4F);
+                        Environment.PlaySound(Audio.sfx.damage1, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                         StartCoroutine(Environment.AddDelay(.1F,
                         delegate
                         {
@@ -216,8 +221,9 @@ public class BossHandler : MonoBehaviour {
                     }
                     else
                     {
+                        // Otherwise, play the default damage sound.
                         playDamageSound = false;
-                        Environment.PlaySound(Audio.sfx.damage0, Environment.sfxVolume * 0.4F);
+                        Environment.PlaySound(Audio.sfx.damage0, Audio.sfxLowPriority * Environment.sfxMasterVolume);
                         StartCoroutine(Environment.AddDelay(.1F,
                         delegate
                         {

@@ -36,6 +36,9 @@ public class GameInit : MonoBehaviour
 
         dialogueHandler.bossTitleCard = GameObject.Find("Title Card");
 
+        // Music
+        Environment.bgmAudioSource.volume = Environment.bgmMasterVolume;
+
         // Reset player statistics
         playerHandler.score = 0;
         playerHandler.points = 0;
@@ -46,6 +49,8 @@ public class GameInit : MonoBehaviour
         cullingBorder.GetComponent<BoxCollider2D>().size = cullingBorder.GetComponent<BoxCollider2D>().size * Environment.camera.GetComponent<Camera>().orthographicSize;
 
         // Makes gameplay runtime true once initialization is complete
+        Environment.gameplayTime = 0;
         Environment.gameplayRunning = true;
+        Environment.PlayBGM(Audio.bgm.stg01b);
     }
 }

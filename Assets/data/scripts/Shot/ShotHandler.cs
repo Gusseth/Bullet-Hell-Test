@@ -80,12 +80,24 @@ public class ShotHandler : MonoBehaviour {
     {
         if ((collision.transform.GetComponent<EntityHandler>() || collision.transform.GetComponent<BossHandler>() || collision.transform.GetComponent<PlayerHandler>()) && collision.gameObject != source)
         {
+            // Checks if the hit object is a valid entity, boss, or player AND it isn't the source of this shot
             hit = true;
-            collision.gameObject.SendMessage("OnHit", new HitData(shot.damage, source, shot));
+            collision.gameObject.SendMessage("OnHit", new HitData(shot.damage, source, shot)); // Fires the OnHit function in the entity
             if (!shot.penetrate)
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    // Only used for grazing, nothing else for now.
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Graze Area" && gameObject.layer != LayerMask.NameToLayer("PlayerShot"))
+        {
+            // If the affected area is a graze area and the shot is not from the player
+            Environment.playerHandler.graze++;
+            Environment.PlaySound(Audio.sfx.graze, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
         }
     }
 

@@ -101,7 +101,7 @@ public class PlayerHandler : MonoBehaviour {
     {
         if (!isInvincible)
         {
-            Environment.PlaySound(Audio.sfx.plDeath);
+            Environment.PlaySound(Audio.sfx.plDeath, Audio.sfxTopPriority * Environment.sfxMasterVolume);
             isInvincible = true;
             StartCoroutine(Deathbomb(data));
         }
@@ -115,7 +115,7 @@ public class PlayerHandler : MonoBehaviour {
     {
         if (!isInvincible)
         {
-            Environment.PlaySound(Audio.sfx.plDeath);
+            Environment.PlaySound(Audio.sfx.plDeath, Audio.sfxTopPriority * Environment.sfxMasterVolume);
             isInvincible = true;
             StartCoroutine(Deathbomb(new HitData(objectHit)));
         }
@@ -233,27 +233,27 @@ public class PlayerHandler : MonoBehaviour {
             case Item.ItemType.smallPower:
                 AddPower(0.01F);
                 AddScore(100);
-                Environment.PlaySound(Audio.sfx.itemPickup);
+                Environment.PlaySound(Audio.sfx.itemPickup, Audio.sfxHighPriority * Environment.sfxMasterVolume);
                 break;
             case Item.ItemType.bigPower:
                 AddPower(0.05F);
                 AddScore(1000);
-                Environment.PlaySound(Audio.sfx.itemPickup);
+                Environment.PlaySound(Audio.sfx.itemPickup, Audio.sfxHighPriority * Environment.sfxMasterVolume);
                 break;
             case Item.ItemType.point:
                 points++;
                 AddScore(10000);
-                Environment.PlaySound(Audio.sfx.itemPickup);
+                Environment.PlaySound(Audio.sfx.itemPickup, Audio.sfxHighPriority * Environment.sfxMasterVolume);
                 break;
             case Item.ItemType.bomb:
                 bombs++;
                 AddScore(1000);
-                Environment.PlaySound(Audio.sfx.extend);
+                Environment.PlaySound(Audio.sfx.extend, Audio.sfxTopPriority * Environment.sfxMasterVolume);
                 break;
             case Item.ItemType.life:
                 lives++;
                 AddScore(1000);
-                Environment.PlaySound(Audio.sfx.extend);
+                Environment.PlaySound(Audio.sfx.extend, Audio.sfxTopPriority * Environment.sfxMasterVolume);
                 break;
             case Item.ItemType.fullPower:
                 AddPower(player.maxPower);
@@ -298,7 +298,7 @@ public class PlayerHandler : MonoBehaviour {
     {
         if ((int)power < (int)(power + value))
         {
-            Environment.PlaySound(Audio.sfx.powerUp);
+            Environment.PlaySound(Audio.sfx.powerUp, Audio.sfxTopPriority * Environment.sfxMasterVolume);
         }
 
         power = Mathf.Clamp(power + value, 0, player.maxPower);

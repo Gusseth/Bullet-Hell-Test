@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DebugHandler : MonoBehaviour
 {
+    public string debugDialogueMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +68,25 @@ public class DebugHandler : MonoBehaviour
                 Environment.lockInput = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 return;
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                string msg = debugDialogueMessage;
+                if (msg == "")
+                {
+                    msg = Random.Range(int.MinValue, int.MaxValue).ToString();
+                }
+                Environment.dialogueHandler.RunDialogue(new Dialogue((Dialogue.Speaker)Mathf.RoundToInt(Random.Range(1, 3)), (Dialogue.Face)Mathf.RoundToInt(Random.Range(0, 8)), msg));
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Environment.EndDialogue();
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.Backslash))
+            {
+                Environment.PlayBGM(Audio.bgm.stg01b);
             }
         }
     }

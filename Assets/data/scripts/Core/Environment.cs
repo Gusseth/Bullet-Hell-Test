@@ -18,7 +18,7 @@ public class Environment : MonoBehaviour {
     public readonly static string gameName = "Touhou 18 - Mountain of Debugging";
 
     /// <summary> The current version of this build. </summary>
-    public readonly static string version = "v0.02b-dev";
+    public readonly static string version = "v0.02d-dev";
 
     /// <summary> Anti-Wriggle mode. </summary>
     public readonly static bool debugMode = true;
@@ -35,11 +35,15 @@ public class Environment : MonoBehaviour {
     /// <summary> List that contains all items in the game. </summary>
     public static List<GameObject> itemList = new List<GameObject>();
 
-    /// <summary> Music volume. </summary>
-    public static float bgmVolume = 1.0F;
+    /// <summary> Music base volume. </summary>
+    public static float bgmMasterVolume = .6F;
 
-    /// <summary> SFX volume. </summary>
-    public static float sfxVolume = .5F;
+    public int bgmOffset;
+
+    public int offset2;
+
+    /// <summary> SFX base volume. </summary>
+    public static float sfxMasterVolume = .5F;
 
     // Shortcuts for commonly used Components ///////////////////////////////////////////////////////////////////////////////////
 
@@ -84,8 +88,11 @@ public class Environment : MonoBehaviour {
 
     // Game Variables ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /// <summary> Ticks passed since the beginning of the game, 1 tick = 1 frame. </summary>
+    /// <summary> Ticks passed since the start of the executable, 1 tick = 1 frame. </summary>
     public static ulong time;
+
+    /// <summary> Ticks passed since the start of the current game session, 1 tick = 1 frame. </summary>
+    public static ulong gameplayTime;
 
     /// <summary> True of the game is paused. </summary>
     public static bool isPaused;
@@ -131,7 +138,7 @@ public class Environment : MonoBehaviour {
     /// <param name="b">Blue value between 0-255</param>
     /// <param name="a">Alpha or Transparency value between 0-255</param>
     /// <returns></returns>
-    public static Color ColorInt(byte r, byte g, byte b, byte a)
+    public static Color ColorByte(byte r, byte g, byte b, byte a)
     {
         return new Color(r / 255F, g / 255F, b / 255F, a / 255F);
     }
@@ -143,9 +150,9 @@ public class Environment : MonoBehaviour {
     /// <param name="g">Green value between 0-255</param>
     /// <param name="b">Blue value between 0-255</param>
     /// <returns></returns>
-    public static Color ColorInt(byte r, byte g, byte b)
+    public static Color ColorByte(byte r, byte g, byte b)
     {
-        return ColorInt(r, g, b, 255);
+        return ColorByte(r, g, b, 255);
     }
 
     /// <summary>
@@ -211,6 +218,27 @@ public class Environment : MonoBehaviour {
         sfxAudioSource.PlayOneShot(Audio.Parse(sound), Mathf.Clamp01(volume));
     }
 
+    public static void PlayBGM(Audio.bgm bgm)
+    {
+        bgmAudioSource.Stop();
+
+        // TEMP HARDCODE BELOW -- YOU HAVE BEEN WARNED -- PREPARE YOUR EYES ////////////////////////////////////////////////////////////////////////////////////////////////
+        bgmAudioSource.clip = Resources.Load<AudioClip>("bgm/Jelly Stone");
+        bgmAudioSource.PlayScheduled(0);
+    }
+
+    public static void PauseBGM()
+    {
+        if (!isPaused)
+        {
+            bgmAudioSource.UnPause();
+        }
+        else
+        {
+            bgmAudioSource.Pause();
+        }
+    }
+
     /// <summary>
     /// Spawns an item to a desired location.
     /// </summary>
@@ -249,6 +277,23 @@ public class Environment : MonoBehaviour {
     public static void SpawnItem(Item.ItemType item, GameObject target, bool spread = true, float startVelocity = 0)
     {
         SpawnItem(item, target.transform.position, spread, startVelocity);
+    }
+
+    /// <summary>
+    /// Displays the inputted dialogue object. 
+    /// </summary>
+    /// <param name="dialogue">The dialogue to be displayed</param>
+    public static void RunDialogue(Dialogue dialogue)
+    {
+        dialogueHandler.RunDialogue(dialogue);
+    }
+
+    /// <summary>
+    /// Ends ALL dialogue, both speakers disappear.
+    /// </summary>
+    public static void EndDialogue()
+    {
+        dialogueHandler.EndDialogue();
     }
 
     /// <summary>
@@ -368,5 +413,16 @@ public class Environment : MonoBehaviour {
     {
         // Updates time
         time++;
+    }
+
+    private void Update()
+    {
+        // Temporary code////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (bgmAudioSource.isPlaying && bgmAudioSource.timeSamples >= offset2)
+        {
+            Debug.Log("Looping Audio...");
+            bgmAudioSource.timeSamples = bgmOffset + (bgmAudioSource.timeSamples - offset2);
+            Debug.Log(bgmAudioSource.timeSamples);
+        }
     }
 }

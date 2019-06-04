@@ -10,11 +10,30 @@ using UnityEngine;
 [System.Serializable]
 public class Audio {
 
+    // SFX Volume 'priority', makes specific sound effects louder to distinguish the sound from other sound effects
+
+    /// <summary> Volume coefficient priority for less important sound effects. </summary>
+    public readonly static float sfxLowPriority = 0.2F;
+
+    /// <summary> Volume coefficient priority for most sound effects. </summary>
+    public readonly static float sfxNormalPriority = 0.4F;
+
+    /// <summary> Volume coefficient priority for more important effects. </summary>
+    public readonly static float sfxHighPriority = 0.6F;
+
+    /// <summary> Volume coefficient priority for highly important effects. </summary>
+    public readonly static float sfxTopPriority = 0.8F;
 
     /// <summary> Enumeration of all sound effects. </summary>
     public enum sfx
     {
-        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, spellcard, plDeath, bossDeath, enemyDeath, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2
+        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, spellcard, plDeath, bossDeath, enemyDeath, graze, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2
+    }
+
+    /// <summary> Enumeration of all stage and boss music. </summary>
+    public enum bgm
+    {
+        menu, score, stg01, stg01b, stg02, stg02b, stg03, stg03b, stg04, stg04b, stg05, stg05b, stg06, stg06b, stg07, stg07b
     }
 
     /// <summary> Parses audio enumerations into AudioClips. </summary>
@@ -63,6 +82,9 @@ public class Audio {
                     break;
                 case sfx.enemyDeath:
                     audioName = "se_enep00";
+                    break;
+                case sfx.graze:
+                    audioName = "se_graze";
                     break;
                 case sfx.plShoot:
                     audioName = "se_plst00";

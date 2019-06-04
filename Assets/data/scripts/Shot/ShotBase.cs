@@ -7,23 +7,39 @@ using UnityEngine;
 /// </summary>
 public class Shot {
 
-// Variable Declaration
+    // Variable Declaration
 
     // Physics Variables
+    /// <summary> The speed of this shot. </summary>
     public float speed;
+
+    /// <summary> The transform rotation of this shot. </summary>
     public float rotation;
 
     // Appearance Variables
+
+    /// <summary> The colour of this shot. </summary>
     public Color32 colour;
-    protected Sprite sprite;
+
+    /// <summary> The sprite of the shot. </summary>
+    public Sprite sprite;
 
     // Shot Variables
+
+    /// <summary> The damage dealt to the entity that this shot hits. </summary>
     public float damage = 1F;
+
+    /// <summary> The type of shot: special, ball, laser </summary>
     public ShotType shotType;
+
+    /// <summary> The shot sub-type: special, tiny shot, small shot, big shot </summary>
     public ShotSubType subType;
 
     // Gameplay Variables
+    /// <summary> Should this shot penetrate through entities? </summary>
     public bool penetrate = false;
+
+    /// <summary> Returns true of this shot's transform rotation changes. </summary>
     public bool isRotating = false;
 
     public enum ShotType
@@ -68,9 +84,18 @@ public class Shot {
 /// </summary>
 public class HitData
 {
+
+    // Variable Declaration
+
+    /// <summary> The damage dealt by the shot received. </summary>
     public float damage;
+
+    /// <summary> The GameObject of the shot's source. </summary>
     public GameObject source;
+
+    /// <summary> The Shot class of the shot received. </summary>
     public Shot shot;
+
     public HitDataType hitType;
     public enum HitDataType
     {

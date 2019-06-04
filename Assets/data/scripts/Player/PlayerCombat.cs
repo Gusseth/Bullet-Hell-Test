@@ -127,7 +127,7 @@ public class PlayerCombat : MonoBehaviour {
     /// </summary>
     IEnumerator PlayShootSFX(float interval)
     {
-        Environment.PlaySound(Audio.sfx.plShoot, Environment.sfxVolume * .5F);
+        Environment.PlaySound(Audio.sfx.plShoot, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
         yield return new WaitForSecondsRealtime(interval);
         doShootSFX = true;
     }

@@ -28,14 +28,20 @@ public class GameManager : MonoBehaviour
     {
         if (Environment.isPaused)
         {
+            // Unpausing game...
             Time.timeScale = 1;
             Environment.isPaused = false;
+            Environment.PlaySound(Audio.sfx.cancel, Audio.sfxTopPriority * Environment.sfxMasterVolume);
+            Environment.PauseBGM();
             return;
         }
         else
         {
+            // Pausing
             Time.timeScale = 0;
             Environment.isPaused = true;
+            Environment.PauseBGM();
+            Environment.PlaySound(Audio.sfx.pause, Audio.sfxTopPriority * Environment.sfxMasterVolume);
             return;
         }
     }
@@ -48,6 +54,7 @@ public class GameManager : MonoBehaviour
         if (pause)
         {
             Time.timeScale = 0;
+            Environment.PlaySound(Audio.sfx.pause, Audio.sfxTopPriority * Environment.sfxMasterVolume);
         }
         else
         {
@@ -61,12 +68,16 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Returns the current difficulty of the game.
     /// </summary>
-    /// <returns>Game Difficulty</returns>
+    /// <returns>Environment.Difficulty</returns>
     public static Environment.Difficulty GetDifficulty()
     {
         return Environment.gameManager.difficulty;
     }
 
+    /// <summary>
+    /// Returns the current stage of the game.
+    /// </summary>
+    /// <returns>Environment.Stage</returns>
     public static Environment.Stage GetStage()
     {
         return Environment.gameManager.stage;
@@ -95,7 +106,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
+            return;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Environment.gameplayTime++;
     }
 
 }

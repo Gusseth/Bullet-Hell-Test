@@ -87,6 +87,9 @@ public class StatusHandler : MonoBehaviour
     /// <summary> Local copy of the player's power so that SetPower() is called when there is a mismatch for optimization. </summary>
     float localPower;
 
+    /// <summary> Local copy of the player's graze count so that SetGraze() is called when there is a mismatch for optimization. </summary>
+    int localGraze;
+
     // Public Methods and Functions 
 
 
@@ -185,6 +188,16 @@ public class StatusHandler : MonoBehaviour
         maxPowerDecimal.GetComponent<Text>().text = (maxPow - wholeNumber).ToString(".00");
     }
 
+    /// <summary>
+    /// Processes the backend for the Graze UI Counter.
+    /// </summary>
+    void SetGraze()
+    {
+        localGraze = Environment.playerHandler.graze;
+        graze.transform.GetComponentInChildren<Text>().text = localGraze.ToString();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -236,6 +249,12 @@ public class StatusHandler : MonoBehaviour
         {
             // Fires when there is a mismatch in bomb count.
             SetBombs();
+        }
+
+        if (Environment.playerHandler.graze != localGraze)
+        {
+            // Fires when there is a mismatch in graze count.
+            SetGraze();
         }
     }
 }
