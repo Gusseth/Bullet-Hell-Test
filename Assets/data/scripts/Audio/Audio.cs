@@ -27,7 +27,7 @@ public class Audio {
     /// <summary> Enumeration of all sound effects. </summary>
     public enum sfx
     {
-        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, spellcard, plDeath, bossDeath, enemyDeath, graze, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2
+        ok, cancel, select, pause, powerUp, extend, itemPickup, masterSpark, spellcard, plDeath, bossDeath, enemyDeath, graze, plShoot, damage0, damage1, enmShoot0, enmShoot1, enmShoot2, enmPowerUp0, enmPowerUp1, chargeUp0, chargeUp1, cardClear
     }
 
     /// <summary> Enumeration of all stage and boss music. </summary>
@@ -36,7 +36,11 @@ public class Audio {
         menu, score, stg01, stg01b, stg02, stg02b, stg03, stg03b, stg04, stg04b, stg05, stg05b, stg06, stg06b, stg07, stg07b
     }
 
-    /// <summary> Parses audio enumerations into AudioClips. </summary>
+    /// <summary>
+    /// Parses audio enumerations into appropriate AudioClips.
+    /// </summary>
+    /// <param name="AudioEnum">An enumerator from the Audio class.</param>
+    /// <returns></returns>
     public static AudioClip Parse(System.Enum AudioEnum)
     {
         System.Type enumType = AudioEnum.GetType();
@@ -104,6 +108,21 @@ public class Audio {
                 case sfx.enmShoot2:
                     audioName = "se_tan02";
                     break;
+                case sfx.enmPowerUp0:
+                    audioName = "se_power0";
+                    break;
+                case sfx.enmPowerUp1:
+                    audioName = "se_power1";
+                    break;
+                case sfx.chargeUp0:
+                    audioName = "se_ch00";
+                    break;
+                case sfx.chargeUp1:
+                    audioName = "se_ch01";
+                    break;
+                case sfx.cardClear:
+                    audioName = "se_cardget";
+                    break;
                 default:
                     Debug.LogWarning("Invalid SFX Enumerator! Are you sure you're trying to parse a valid SFX enum?");
                     return null;
@@ -117,5 +136,26 @@ public class Audio {
             Debug.LogWarning("Invalid Audio Enumerator! Are you sure you're trying to parse a valid audio enumerator?");
             return null;
         }
+    }
+
+    /// <summary>
+    /// Fades the AudioSource out.
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="timeInSeconds"></param>
+    /// <returns></returns>
+    public static IEnumerator FadeOut(AudioSource source, float timeInSeconds)
+    {
+        float startVolume = source.volume;
+
+        while (source.volume > 0)
+        {
+            source.volume -= startVolume * Time.deltaTime / timeInSeconds;
+
+            yield return null;
+        }
+
+        source.Stop();
+        source.volume = startVolume;
     }
 }

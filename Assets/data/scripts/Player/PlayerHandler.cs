@@ -55,19 +55,23 @@ public class PlayerHandler : MonoBehaviour {
     // Conditional Variables ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /// <summary> Returns true if the player is alive. False if not. </summary>
-    public bool isAlive = true;
+    public static bool isAlive = true;
 
     /// <summary> Returns true if the player is focussing. False if not. </summary>
-    public bool isFocused;
+    public static bool isFocused;
 
     /// <summary> Returns true if the bomb is still in effect. </summary>
-    public bool isBombing;
+    public static bool isBombing;
 
     /// <summary> Returns true if the player can bomb. This is really only used for deathbombing. </summary>
-    public bool canBomb = true;
+    public static bool canBomb = true;
+
+    /// <summary> Returns true if the player is allowed to shoot. </summary>
+    public static bool canShoot = true;
 
     /// <summary> Returns true if the player is invincible. </summary>
-    public bool isInvincible;
+    public static bool isInvincible;
+
 
 
 // Initialization
@@ -308,6 +312,17 @@ public class PlayerHandler : MonoBehaviour {
     /// Handles any trigger event that touches the player.
     /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Collect All Items Trigger")
+        {
+            Environment.CollectAllItems();
+        }
+    }
+
+    /// <summary>
+    /// Handles any trigger event that stays in the player.
+    /// </summary>
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.name == "Collect All Items Trigger")
         {

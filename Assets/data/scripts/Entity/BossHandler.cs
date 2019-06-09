@@ -28,10 +28,10 @@ public class BossHandler : MonoBehaviour {
     public bool spellcardActive = false;
 
     /// <summary> True if a spellcard is activated. </summary>
-    public bool isInvincible = false;
+    public bool isInvincible = true;
 
     /// <summary> True if the boss' death function is triggered.. </summary>
-    public bool isDead = false; // Is this always true for undead bosses?
+    public bool isDead = false; // Isn't this always true for undead bosses?
 
     /// <summary> The health threshold that will trigger a switch in the boss' Attack Stage. </summary>
     public float healthTriggerPoint;
@@ -76,8 +76,12 @@ public class BossHandler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// This method is called by GameManager.BossAttack()
+    /// </summary>
     public void TriggerAttack()
     {
+        isInvincible = false;
         StartCoroutine(ExecutionLoop(0, 0));
     }
 
@@ -87,6 +91,9 @@ public class BossHandler : MonoBehaviour {
         playDamageSound = true;
     }
 
+    /// <summary>
+    /// Removes the current Attack Stage from the AttackTable and inserts, then plays the next.
+    /// </summary>
     public void MoveToNextAttackStage()
     {
         StopBulletLoop();
@@ -127,12 +134,26 @@ public class BossHandler : MonoBehaviour {
             isDead = true;
             Destroy(GetComponent<CircleCollider2D>());
             Debug.Log(bossName + " has been defeated!");
-            Environment.PlaySound(Audio.sfx.bossDeath, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
-            Vector3 pos = transform.position;
-            Destroy(gameObject, 1);
+
+            if (!midboss)
+            {
+                // if the boss is not a midboss...
+                Environment.PlaySound(Audio.sfx.bossDeath, Audio.sfxHighPriority * Environment.sfxMasterVolume);
+                Vector3 pos = transform.position;
+                GameManager.bossDefeated = true;
+                StartCoroutine(Environment.AddDelay(.5F, delegate
+                {
+                    DialogueHandler.StartDialogue();
+                }));
+                Destroy(gameObject, 1);
+            }
         }
     }
 
+    /// <summary>
+    /// This method is called when the boss is hit by a player shot.
+    /// </summary>
+    /// <param name="data">Data provided by the shot</param>
     public void OnHit(HitData data)
     {
         if (!isInvincible)
@@ -236,11 +257,13 @@ public class BossHandler : MonoBehaviour {
 
             if (bossHealth == 0)
             {
+                // If the boss' health is 0, move to the next attack stage
                 bossHealth = maxHealth;
                 MoveToNextAttackStage();
             }
             else if (bossHealth == healthTriggerPoint && !spellcardActive)
             {
+                // Same thing except that if the hp hits the trigger hp
                 bossHealth = healthTriggerPoint;
                 MoveToNextAttackStage();
             }
@@ -249,7 +272,6 @@ public class BossHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        TriggerAttack();
 	}
 	
 	// Update is called once per frame

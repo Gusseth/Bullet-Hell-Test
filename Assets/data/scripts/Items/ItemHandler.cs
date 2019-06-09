@@ -46,7 +46,7 @@ public class ItemHandler : MonoBehaviour {
     void Start()
     {
         // Immediately heads towrds the player if the item spawns and the bomb is still activated
-        if (Environment.playerHandler.isBombing)
+        if (PlayerHandler.isBombing)
         {
             PlayerCollect();
         }
@@ -103,7 +103,7 @@ public class ItemHandler : MonoBehaviour {
         if (target != null && followingEntity)
         {
             // If the item is following a valid target
-            if (target == Environment.player && !Environment.playerHandler.isAlive)
+            if (target == Environment.player && !PlayerHandler.isAlive)
             {
                 // If the target is the player and if the player dies, the item is sent back to freefall mode
                 ResetItemState();

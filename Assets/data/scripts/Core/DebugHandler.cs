@@ -50,15 +50,15 @@ public class DebugHandler : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                bool isInvincible = Environment.playerHandler.isInvincible;
+                bool isInvincible = PlayerHandler.isInvincible;
                 if (isInvincible)
                 {
-                    Environment.playerHandler.isInvincible = false;
+                    PlayerHandler.isInvincible = false;
                     return;
                 }
                 else
                 {
-                    Environment.playerHandler.isInvincible = true;
+                    PlayerHandler.isInvincible = true;
                     return;
                 }
             }
@@ -76,7 +76,7 @@ public class DebugHandler : MonoBehaviour
                 {
                     msg = Random.Range(int.MinValue, int.MaxValue).ToString();
                 }
-                Environment.dialogueHandler.RunDialogue(new Dialogue((Dialogue.Speaker)Mathf.RoundToInt(Random.Range(1, 3)), (Dialogue.Face)Mathf.RoundToInt(Random.Range(0, 8)), msg));
+                Environment.dialogueHandler.RunDialogue(new Dialogue((DialogueEvent.Speaker)Mathf.RoundToInt(Random.Range(1, 3)), (Dialogue.Face)Mathf.RoundToInt(Random.Range(0, 8)), msg));
                 return;
             }
             if (Input.GetKeyDown(KeyCode.K))

@@ -114,9 +114,9 @@ public class PlayerCombat : MonoBehaviour {
     {
         playerHandler.bombs--;
         Debug.Log("Player has bombed. What a scrub.");
-        playerHandler.canBomb = false;
-        playerHandler.isBombing = true;
-        playerHandler.isInvincible = true;
+        PlayerHandler.canBomb = false;
+        PlayerHandler.isBombing = true;
+        PlayerHandler.isInvincible = true;
         Environment.PlaySound(Audio.sfx.masterSpark, 1F);
         Environment.CollectAllItems();
         StartCoroutine(BombCooldown());
@@ -138,10 +138,10 @@ public class PlayerCombat : MonoBehaviour {
     IEnumerator BombCooldown()
     {
         yield return new WaitForSeconds(5F);
-        playerHandler.isBombing = false;
+        PlayerHandler.isBombing = false;
         yield return new WaitForSeconds(1F);
-        playerHandler.isInvincible = false;
-        playerHandler.canBomb = true;
+        PlayerHandler.isInvincible = false;
+        PlayerHandler.canBomb = true;
     }
 
 
@@ -158,17 +158,16 @@ public class PlayerCombat : MonoBehaviour {
     {
         if (!Environment.lockInput)
         {
-            if (Input.GetKey(shootButton))
+            if (Input.GetKey(shootButton) && PlayerHandler.canShoot)
             {
                 Shoot();
             }
 
-            if (Input.GetKeyDown(bombButton) && playerHandler.canBomb)
+            if (Input.GetKeyDown(bombButton) && PlayerHandler.canBomb)
             {
                 Bomb();
             }
         }
 	}
-
  
 }

@@ -9,21 +9,38 @@ public class ShotHandler : MonoBehaviour {
 
 // Variable Declaration
 
+    /// <summary> Shot class of this shot. </summary>
     public Shot shot;
+
+    /// <summary> The current rotation of this shot. </summary>
     Vector3 rotation;
 
+    /// <summary> Temporary viariable. </summary>
     public Vector3 displacement;
 
+    /// <summary> The source GameObject of this shot. </summary>
     public GameObject source;
+
+    /// <summary> The name of this shot's source. </summary>
     string sourceName = "This is not supposed to be empty!";
+
+    /// <summary> The speed of this shot. </summary>
     public float speed;
+
+    /// <summary> True of the actual GameObject of this shot is rotating. </summary>
     public bool isRotating;
+
+    /// <summary> Returns true if it hits a valid entity. </summary>
     private bool hit = false;
+
+    /// <summary> Sets to false if this shot as already grazed the player. </summary>
+    private bool canGraze = true;
 
 // Class-exclusive functions
 
     public void OnShotNullified()
     {
+        // When a message is sent to this shot to destroy itself
         Destroy(gameObject);
     }
 
@@ -93,11 +110,12 @@ public class ShotHandler : MonoBehaviour {
     // Only used for grazing, nothing else for now.
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Graze Area" && gameObject.layer != LayerMask.NameToLayer("PlayerShot"))
+        if (collision.gameObject.name == "Graze Area" && gameObject.layer != LayerMask.NameToLayer("PlayerShot") && canGraze)
         {
-            // If the affected area is a graze area and the shot is not from the player
+            // If the affected area is a graze area AND the shot is not from the player AND can still count for graze
             Environment.playerHandler.graze++;
             Environment.PlaySound(Audio.sfx.graze, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
+            canGraze = false;
         }
     }
 

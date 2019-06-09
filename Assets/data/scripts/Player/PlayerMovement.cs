@@ -76,13 +76,13 @@ public class PlayerMovement : MonoBehaviour {
                 // When the focus button is pressed down
 
                 speed = rawSpeed / 2F;
-                Environment.playerHandler.isFocused = true;
+                PlayerHandler.isFocused = true;
                 transform.Find("HitboxAssist").gameObject.SetActive(true);
             }
             else
             {
                 speed = rawSpeed;
-                Environment.playerHandler.isFocused = false;
+                PlayerHandler.isFocused = false;
                 transform.Find("HitboxAssist").gameObject.SetActive(false);
             }
 

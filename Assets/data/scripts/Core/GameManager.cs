@@ -13,13 +13,16 @@ public class GameManager : MonoBehaviour
     /// <summary> The highest score achieved in this difficulty. </summary>
     public static ulong hiScore;
 
+    /// <summary> Is the boss defeated? </summary>
+    public static bool bossDefeated = false;
+
     /// <summary> The difficulty of the game. </summary>
     public Environment.Difficulty difficulty;
 
     /// <summary> The difficulty of the game. </summary>
     public Environment.Stage stage;
 
- // Public Functions and Methods
+    // Public Functions and Methods
 
     /// <summary>
     /// Pauses the game.
@@ -63,7 +66,21 @@ public class GameManager : MonoBehaviour
         Environment.isPaused = pause;
     }
 
- // Public Static Methods and Functions
+    public void LoadStageDialogue()
+    {
+
+    }
+
+    /// <summary>
+    /// End the stage.
+    /// </summary>
+    public void EndStageMono()
+    {
+        Environment.PlaySound(Audio.sfx.cardClear, Audio.sfxTopPriority * Environment.sfxMasterVolume);
+        StartCoroutine(Audio.FadeOut(Environment.bgmAudioSource, 5));
+    }
+
+    // Public Static Methods and Functions
 
     /// <summary>
     /// Returns the current difficulty of the game.
@@ -83,6 +100,22 @@ public class GameManager : MonoBehaviour
         return Environment.gameManager.stage;
     }
 
+    /// <summary>
+    /// Makes the boss attack.
+    /// </summary>
+    public static void BossAttack()
+    {
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHandler>().TriggerAttack();
+    }
+
+    /// <summary>
+    /// Ends the stage.
+    /// </summary>
+    public static void EndStage()
+    {
+        Environment.gameManager.EndStageMono();
+    }
+
  // Private Functions and Methods
 
     /// <summary>
@@ -97,7 +130,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Temp Code below /////////////////////////////////////////////////////////////////////////////////////////////////////
+        StartCoroutine(Environment.AddDelay(3, delegate
+        {
+            DialogueHandler.StartDialogue();
+        }));
     }
 
     // Update is called once per frame

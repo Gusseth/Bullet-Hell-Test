@@ -27,8 +27,8 @@ public class PatternBase : object
     /// <summary>Sound effect used after the pattern is made.</summary>
     public Audio.sfx soundEffect;
 
-    /// <summary>The colour of the sprite, modifies the suffix so that it changes colour based on this value.</summary>
-    public int spriteType;
+    /// <summary>A custom sprite for this shot.</summary>
+    public Sprite sprite;
 
     /// <summary>Set to false if the pattern should start either at angle zero or the given angle offset.</summary>
     public bool centreAngle;
@@ -55,14 +55,14 @@ public class PatternBase : object
     /// <param name="spriteType">The colour of the sprite, modifies the suffix so that it changes colour based on this value.</param>
     /// <param name="centreAngle">Set to false if the pattern should start either at angle zero or the given angle offset.</param>
     /// <param name="angleOffset">Where the angle in degrees should start relative to straight down (straight down = angle 0).</param>
-    public PatternBase(int amount, float shotSpeed, float angleRange, float delay, GameObject parent, GameObject bulletPrefab, Audio.sfx soundEffect, int spriteType = 0, bool centreAngle = true, float angleOffset = 0)
+    public PatternBase(int amount, float shotSpeed, float angleRange, float delay, GameObject parent, GameObject bulletPrefab, Audio.sfx soundEffect, bool centreAngle = true, float angleOffset = 0, Sprite sprite = null)
     {
         this.amount = amount;
         this.shotSpeed = shotSpeed;
         this.angleRange = angleRange;
         this.parent = parent;
         this.soundEffect = soundEffect;
-        this.spriteType = spriteType;
+        this.sprite = sprite;
         this.centreAngle = centreAngle;
         this.angleOffset = angleOffset;
         this.delay = delay;
@@ -79,7 +79,13 @@ public class PatternBase : object
         {
             // 'for' loop that spawns every individual bullet into one grouped barrage
             GameObject shot = GameObject.Instantiate(bulletPrefab); // Spawns the shot
-            shot.transform.position = parent.transform.position; 
+            shot.transform.position = parent.transform.position;
+
+            if (sprite != null)
+            {
+                // If a custom sprite is provided, use that sprite.
+                shot.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
 
             // Sets angle 0 as pointing straight down. Further modification is done by the angleoffset value.
             float angle = 180F + angleOffset;
@@ -107,7 +113,7 @@ public class PatternBase : object
             shot.transform.Rotate(new Vector3(0, 0, shotRotation)); // Sets the direction of where this shot is headed.
             shot.GetComponent<ShotHandler>().displacement = Environment.CalculateShotDisplacement(shotSpeed); // Sets the rate in which the bullet displaces itself in world space.
         }
-        Environment.sfxAudioSource.PlayOneShot(Audio.Parse(soundEffect), Environment.sfxMasterVolume * .4F); // Plays audio.
+        Environment.sfxAudioSource.PlayOneShot(Audio.Parse(soundEffect), Audio.sfxNormalPriority * Environment.sfxMasterVolume); // Plays audio.
     }
 }
 

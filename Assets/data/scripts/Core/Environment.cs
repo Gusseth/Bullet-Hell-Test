@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using LitJson;
 
 /// <summary>
 /// The game's environment shell. Game-wide system variables and methods such as time in tick, audio events, and displaying dialogue is handled here. 
@@ -85,6 +87,9 @@ public class Environment : MonoBehaviour {
 
     /// <summary> The SFX Audio Source attatched to the camera. Call this audio source for playing sound effects. </summary>
     public static AudioSource sfxAudioSource;
+
+    /// <summary> The path to the Dialogue folder in StreamingAssets. </summary>
+    public static readonly string dialogueDataPath = Path.Combine(Application.streamingAssetsPath, "Dialogue");
 
     // Game Variables ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -356,7 +361,32 @@ public class Environment : MonoBehaviour {
         return (value - min1) * (max2 - min2) / (max1 - min1) + min2;
     }
 
-// Public Static IEnumerators
+    // JSON-related things
+    /// <summary>
+    /// Returns a properly formatted JSON array for top-level JSON arrays.
+    /// </summary>
+    /// <typeparam name="T">Type of object to be returned.</typeparam>
+    /// <param name="jsonData">Path of the JSON file here.</param>
+    /// <returns></returns>
+    public static T[] JsonToArray<T>(string jsonData)
+    {
+        string newJson = "{ \"array\": " + jsonData + "}";
+        Debug.Log(newJson);
+        JsonWrapper<T> wrapper = JsonUtility.FromJson<JsonWrapper<T>>(newJson);
+        return wrapper.array;
+    }
+
+    /// <summary>
+    /// Wrapper class used to return an array of a type used by the function above.
+    /// </summary>
+    /// <typeparam name="T">Type of object to be returned.</typeparam>
+    [System.Serializable]
+    private class JsonWrapper<T>
+    {
+        public T[] array;
+    }
+
+    // Public Static IEnumerators
 
     /// <summary>
     /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.

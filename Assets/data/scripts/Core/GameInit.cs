@@ -51,6 +51,5 @@ public class GameInit : MonoBehaviour
         // Makes gameplay runtime true once initialization is complete
         Environment.gameplayTime = 0;
         Environment.gameplayRunning = true;
-        Environment.PlayBGM(Audio.bgm.stg01b);
     }
 }

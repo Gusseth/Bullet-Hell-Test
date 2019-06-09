@@ -194,7 +194,7 @@ public class StatusHandler : MonoBehaviour
     void SetGraze()
     {
         localGraze = Environment.playerHandler.graze;
-        graze.transform.GetComponentInChildren<Text>().text = localGraze.ToString();
+        graze.transform.GetComponentInChildren<Text>().text = String.Format("{0:n0}", localGraze);
     }
 
 
