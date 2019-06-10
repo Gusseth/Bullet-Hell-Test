@@ -49,7 +49,10 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary> Backend variable. Only true when the player is automatically moving as a result of respawning. </summary>
     private bool playerRespawnTranslation = false;
 
-    /// <summary> Backend variable. Linear interpolation delta time. DO not touch this, please. </summary>
+    /// <summary> Backend variable. Sets to true if the player already reached max power in their life. </summary>
+    private bool alreadyFullPower = false;
+
+    /// <summary> Backend variable. Linear interpolation delta time. Do not touch this, please. </summary>
     private float lerpTime = 0;
 
     // Conditional Variables ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -158,6 +161,7 @@ public class PlayerHandler : MonoBehaviour {
         {
             // If the player still has lives left, do the respawn cycle
             power = Mathf.Clamp(power - 1, 0, player.maxPower);
+            alreadyFullPower = false;
             Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
             Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
             Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
@@ -317,10 +321,19 @@ public class PlayerHandler : MonoBehaviour {
     {
         if ((int)power < (int)(power + value))
         {
+            // Plays a sound effect if the added power increases the ones digit.
             Environment.PlaySound(Audio.sfx.powerUp, Audio.sfxTopPriority * Environment.sfxMasterVolume);
         }
 
-        power = Mathf.Clamp(power + value, 0, player.maxPower);
+        power = Mathf.Clamp(power + value, 0, player.maxPower); // Clamps the power value between 0 and the maximum power for this character.
+
+        if (power == player.maxPower && !alreadyFullPower)
+        {
+            // Runs when the player hits max power
+            GameUIHandler.PlayFullPowerUpUI();
+            Environment.ClearAllShots();
+            alreadyFullPower = true;
+        }
     }
 
     /// <summary>

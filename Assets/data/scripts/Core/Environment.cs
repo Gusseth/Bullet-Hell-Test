@@ -355,6 +355,10 @@ public class Environment : MonoBehaviour {
                 if (shot.layer == LayerMask.NameToLayer("EnemyShot"))
                 {
                     shot.GetComponent<ShotHandler>().OnShotNullified();
+                    if (PlayerHandler.isBombing)
+                    {
+                        playerHandler.AddScore(100);
+                    }
                 }
             }
         }
@@ -363,6 +367,10 @@ public class Environment : MonoBehaviour {
             foreach (GameObject shot in GameObject.FindGameObjectsWithTag("Shot"))
             {
                 shot.GetComponent<ShotHandler>().OnShotNullified();
+                if (PlayerHandler.isBombing)
+                {
+                    playerHandler.AddScore(100);
+                }
             }
         }
     }

@@ -46,6 +46,7 @@ public class GameInit : MonoBehaviour
         Environment.bgmAudioSource.volume = Environment.bgmMasterVolume;
 
         // Reset player statistics
+        PlayerHandler.isRespawning = false;
         playerHandler.score = 0;
         playerHandler.points = 0;
         playerHandler.power = 0;

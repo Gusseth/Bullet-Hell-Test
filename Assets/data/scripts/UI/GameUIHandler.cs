@@ -16,6 +16,9 @@ public class GameUIHandler : MonoBehaviour
     /// <summary> The GameObject that contains the Extend UI. </summary>
     public GameObject extendUI;
 
+    /// <summary> The GameObject that contains the Full Power Up UI. </summary>
+    public GameObject fullPowerUp;
+
     /// <summary> The GameObject that contains the Stage Clear UI. </summary>
     public GameObject stageClearUI;
 
@@ -41,6 +44,14 @@ public class GameUIHandler : MonoBehaviour
     public static void PlayExtendUI()
     {
         Environment.gameUIHandler.extendUI.GetComponent<Animator>().Play("Execute");
+    }
+
+    /// <summary>
+    /// Plays and shows the Full Power Up UI animation.
+    /// </summary>
+    public static void PlayFullPowerUpUI()
+    {
+        Environment.gameUIHandler.fullPowerUp.GetComponent<Animator>().Play("Execute");
     }
 
     /// <summary>

@@ -103,6 +103,9 @@ public class GameManager : MonoBehaviour
             case 4:
                 StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("Old Adam Bar"); }));
                 break;
+            default:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("The Lost Emotion"); }));
+                break;
         }
     }
 

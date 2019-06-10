@@ -672,7 +672,7 @@ ScriptsOnlyBuild:
     className: EntityHandler
   - hash:
       serializedVersion: 2
-      Hash: 5024d05ee0f5bb4ac0c1d4afae41fb6b
+      Hash: c456a333c385d206d53e1a3c010fc82b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUIHandler
@@ -1081,4 +1081,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: E:/Bullet Hell Test Builds/Latest/Bullet Hell Test.exe
+  playerPath: E:/Bullet Hell Test Builds/Bullet-Hell-Test/Bullet Hell Test.exe
