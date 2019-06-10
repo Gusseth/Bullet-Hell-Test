@@ -234,7 +234,10 @@ public class PlayerHandler : MonoBehaviour {
         Environment.lockInput = false;
         canBomb = true;
         yield return new WaitForSeconds(2);
-        isInvincible = false;
+        if (!DialogueHandler.isDialogueActive)
+        {
+            isInvincible = false;
+        }
         isRespawning = false;
         Debug.Log("Respawn cycle complete.");
     }
