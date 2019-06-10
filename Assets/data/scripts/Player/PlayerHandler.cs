@@ -134,7 +134,7 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary>
     /// OnCollision function, this is called when the player touches an enemy, shot, or other collision objects.
     /// </summary>
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Entity" || collision.gameObject.tag == "Boss")
         {
@@ -331,7 +331,7 @@ public class PlayerHandler : MonoBehaviour {
         {
             // Runs when the player hits max power
             GameUIHandler.PlayFullPowerUpUI();
-            Environment.ClearAllShots();
+            Environment.ClearAllShots(false, true);
             alreadyFullPower = true;
         }
     }
@@ -339,7 +339,7 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary>
     /// Handles any trigger event that touches the player.
     /// </summary>
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Collect All Items Trigger")
         {
@@ -350,7 +350,7 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary>
     /// Handles any trigger event that stays in the player.
     /// </summary>
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.name == "Collect All Items Trigger")
         {
@@ -358,7 +358,7 @@ public class PlayerHandler : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (playerRespawnTranslation)
         {

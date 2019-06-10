@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
         focus = KeyCode.LeftShift;
     }
 
-    private void Start()
+    void Start()
     {
         rawSpeed = Environment.playerHandler.rawSpeed;
         speed = rawSpeed;
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Function below is refreshed every frame
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
 
         // Player's speed in the stated axes

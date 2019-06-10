@@ -93,7 +93,7 @@ public class ShotHandler : MonoBehaviour {
 	}
 
     // This is only called if the bullet hits the player, an enemy, or other things, listed as an entity.
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.transform.GetComponent<EntityHandler>() || collision.transform.GetComponent<BossHandler>() || collision.transform.GetComponent<PlayerHandler>()) && collision.gameObject != source)
         {
@@ -108,7 +108,7 @@ public class ShotHandler : MonoBehaviour {
     }
 
     // Only used for grazing, nothing else for now.
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Graze Area" && gameObject.layer != LayerMask.NameToLayer("PlayerShot") && canGraze)
         {

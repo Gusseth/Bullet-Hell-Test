@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public sealed class EnvironmentPostInit : MonoBehaviour {
 
-    private void Start()
+    void Start()
     {
 
         // Loads sound effects into memory

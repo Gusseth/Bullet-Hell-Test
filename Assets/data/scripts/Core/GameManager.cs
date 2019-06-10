@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
     public void GameOverMono()
     {
         Environment.lockInput = true;
+        gameOver = true;
         Environment.PlayBGM(Audio.bgm.score);
         GameUIHandler.PlayGameOver();
         Time.timeScale = 0;
@@ -167,7 +168,7 @@ public class GameManager : MonoBehaviour
     /// Pauses the game when the window is unfocused.
     /// </summary>
     /// <param name="pause"></param>
-    private void OnApplicationPause(bool pause)
+    void OnApplicationPause(bool pause)
     {
         if (!gameOver)
         {
@@ -195,7 +196,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (!Environment.isPaused)
         {

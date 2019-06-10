@@ -275,10 +275,10 @@ public class DialogueHandler : MonoBehaviour
     /// </summary>
     public static void StartDialogue()
     {
+        PlayerHandler.isInvincible = true;
         Environment.dialogueHandler.CycleDialogue();
         isDialogueActive = true;
         PlayerHandler.canShoot = false;
-        PlayerHandler.isInvincible = true;
 
         if (GameManager.bossDefeated)
         {

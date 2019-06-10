@@ -25,7 +25,7 @@ public class PlayerCombat : MonoBehaviour {
 // Functions and other crap below
 
 
-    private void Start()
+    void Start()
     {
         player = Environment.player;
         playerHandler = Environment.playerHandler;

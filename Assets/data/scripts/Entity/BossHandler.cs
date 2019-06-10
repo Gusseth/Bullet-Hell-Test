@@ -97,7 +97,7 @@ public class BossHandler : MonoBehaviour {
     public void MoveToNextAttackStage()
     {
         StopBulletLoop();
-        Environment.ClearAllShots();
+        Environment.ClearAllShots(false, true);
 
         bool previousCardIsSpellcard = AttackTable[0].isSpellcard;
         int transitionDelay = 3;                                    // Used for determining the delay between attack stages.

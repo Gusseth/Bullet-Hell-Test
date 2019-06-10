@@ -10,7 +10,7 @@ public class DestroyOnBorder : MonoBehaviour
     /// <summary>
     /// The sole function of this script. Checks any trigger exit event if it's the technical boundary. If true, then delete the GameObject.
     /// </summary>
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == Environment.cullBoundary)
         {

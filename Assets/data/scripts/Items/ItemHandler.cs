@@ -67,7 +67,7 @@ public class ItemHandler : MonoBehaviour {
     }
 
     /// <summary> This is called if the item enters an item trigger zone </summary>
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Item Trigger")
         {
@@ -80,7 +80,7 @@ public class ItemHandler : MonoBehaviour {
     }
 
     /// <summary> This is called if the item enters touches a valid collision entity. </summary>
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == target)
         {
@@ -91,14 +91,14 @@ public class ItemHandler : MonoBehaviour {
     }
 
     /// <summary> This is resets the state of the item back to freefall mode. </summary>
-    private void ResetItemState()
+    void ResetItemState()
     {
         followingEntity = false;
         target = null;
         rb.gravityScale = Environment.itemGravityScale;
     }
 
-    private void Update()
+    void Update()
     {
         if (target != null && followingEntity)
         {

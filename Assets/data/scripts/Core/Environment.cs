@@ -346,7 +346,8 @@ public class Environment : MonoBehaviour {
     /// Clears all bullets in the screen.
     /// </summary>
     /// <param name="includingPlayerShots">Set to true if all shots should be cleared indiscriminately.</param>
-    public static void ClearAllShots(bool includingPlayerShots = false)
+    /// <param name="addScore">Set to true for each bullet cleared adds 100 points to score.</param>
+    public static void ClearAllShots(bool includingPlayerShots = false, bool addScore = false)
     {
         if (!includingPlayerShots)
         {
@@ -355,7 +356,7 @@ public class Environment : MonoBehaviour {
                 if (shot.layer == LayerMask.NameToLayer("EnemyShot"))
                 {
                     shot.GetComponent<ShotHandler>().OnShotNullified();
-                    if (PlayerHandler.isBombing)
+                    if (addScore)
                     {
                         playerHandler.AddScore(100);
                     }
@@ -367,7 +368,7 @@ public class Environment : MonoBehaviour {
             foreach (GameObject shot in GameObject.FindGameObjectsWithTag("Shot"))
             {
                 shot.GetComponent<ShotHandler>().OnShotNullified();
-                if (PlayerHandler.isBombing)
+                if (addScore)
                 {
                     playerHandler.AddScore(100);
                 }
@@ -500,20 +501,20 @@ public class Environment : MonoBehaviour {
 
     // Other functions such as adding tick to the time
 
-    private void Awake()
+    void Awake()
     {
         PriorityInitialize();
         core = gameObject;
     }
 
-    private void Start()
+    void Start()
     {
         mainCanvas = GameObject.Find("Main Canvas");
         ReloadAllEnvironmentVars();
         GameInit.Initialize();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         // Updates time
         time++;
