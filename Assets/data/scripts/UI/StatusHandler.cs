@@ -107,6 +107,7 @@ public class StatusHandler : MonoBehaviour
         if (Environment.playerHandler.score >= GameManager.hiScore)
         {
             hiScore.transform.GetComponentInChildren<Text>().text = stringedScore;
+            GameManager.hiScore = Environment.playerHandler.score;
         }
     }
 
@@ -218,6 +219,8 @@ public class StatusHandler : MonoBehaviour
             // Same thing for bombs and stars.
             stars.Add(star.gameObject);
         }
+
+        hiScore.GetComponentInChildren<Text>().text = String.Format("{0:n0}", GameManager.hiScore);
 
         SetLives();
         SetBombs();

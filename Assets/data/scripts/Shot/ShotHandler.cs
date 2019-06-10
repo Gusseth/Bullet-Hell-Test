@@ -115,6 +115,7 @@ public class ShotHandler : MonoBehaviour {
             // If the affected area is a graze area AND the shot is not from the player AND can still count for graze
             Environment.playerHandler.graze++;
             Environment.PlaySound(Audio.sfx.graze, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
+            Environment.playerHandler.AddScore(1500);
             canGraze = false;
         }
     }

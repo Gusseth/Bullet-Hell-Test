@@ -30,6 +30,12 @@ public class PatternBase : object
     /// <summary>A custom sprite for this shot.</summary>
     public Sprite sprite;
 
+    /// <summary>Set to true if the pattern should centre on the player.</summary>
+    public bool trackPlayer;
+
+    /// <summary>Set to true if this pattern should use the same angle used from the previous pattern.</summary>
+    public bool useAngleFromLastPattern;
+
     /// <summary>Set to false if the pattern should start either at angle zero or the given angle offset.</summary>
     public bool centreAngle;
 
@@ -52,10 +58,11 @@ public class PatternBase : object
     /// <param name="parent">Insert the parent via transform.parent.</param>
     /// <param name="bulletPrefab">Shot used as a prefab.</param>
     /// <param name="soundEffect">Sound effect used after the pattern is made.</param>
-    /// <param name="spriteType">The colour of the sprite, modifies the suffix so that it changes colour based on this value.</param>
+    /// <param name="trackPlayer">Set to true if the pattern should lock on the player.</param>
     /// <param name="centreAngle">Set to false if the pattern should start either at angle zero or the given angle offset.</param>
     /// <param name="angleOffset">Where the angle in degrees should start relative to straight down (straight down = angle 0).</param>
-    public PatternBase(int amount, float shotSpeed, float angleRange, float delay, GameObject parent, GameObject bulletPrefab, Audio.sfx soundEffect, bool centreAngle = true, float angleOffset = 0, Sprite sprite = null)
+    /// <param name="sprite">Add a custom sprite for the bullets.</param>
+    public PatternBase(int amount, float shotSpeed, float angleRange, float delay, GameObject parent, GameObject bulletPrefab, Audio.sfx soundEffect, bool trackPlayer = false, bool useAngleFromLastPattern = false, bool centreAngle = true, float angleOffset = 0, Sprite sprite = null)
     {
         this.amount = amount;
         this.shotSpeed = shotSpeed;
@@ -63,6 +70,7 @@ public class PatternBase : object
         this.parent = parent;
         this.soundEffect = soundEffect;
         this.sprite = sprite;
+        this.trackPlayer = trackPlayer;
         this.centreAngle = centreAngle;
         this.angleOffset = angleOffset;
         this.delay = delay;
@@ -75,6 +83,29 @@ public class PatternBase : object
     /// </summary>
     public void RainDownHell()
     {
+        float angle; // This is the angle that the pattern bases itself on
+
+        if (trackPlayer)
+        {
+            // Replaces the angle value so that it locks on to the player, accounting for the given offset angle.
+            Vector2 deltaPos = Environment.player.transform.InverseTransformPoint(parent.transform.position);       // Calculates the difference in position relative to the player since the player is
+                                                                                                                    // already angled at the right perspective (0 degrees = upwards)
+
+            angle = Mathf.Atan2(deltaPos.normalized.y, deltaPos.normalized.x)   // Grabs the angle using inverse tan (arctan) that uses y/x
+                * Mathf.Rad2Deg                                                 // Converts the result from radians to degrees  
+                + 90                                                            // Adds 90 degrees because the arctan angle is offset by -90 degrees
+                + angleOffset;                                                  // Adds the angleOffset value if given
+        }
+        else if (useAngleFromLastPattern)
+        {
+            angle = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHandler>().AttackTable[0].lastAngle;
+        }
+        else
+        {
+            // Sets angle 0 as pointing straight down. Further modification is done by the angleoffset value.
+            angle = 180F + angleOffset;
+        }
+
         for (int i = 0; i < amount; i++)
         {
             // 'for' loop that spawns every individual bullet into one grouped barrage
@@ -86,9 +117,6 @@ public class PatternBase : object
                 // If a custom sprite is provided, use that sprite.
                 shot.GetComponent<SpriteRenderer>().sprite = sprite;
             }
-
-            // Sets angle 0 as pointing straight down. Further modification is done by the angleoffset value.
-            float angle = 180F + angleOffset;
 
             float shotRotation; // Used to rotate the shot towards its designated direction
 
@@ -114,6 +142,9 @@ public class PatternBase : object
             shot.GetComponent<ShotHandler>().displacement = Environment.CalculateShotDisplacement(shotSpeed); // Sets the rate in which the bullet displaces itself in world space.
         }
         Environment.sfxAudioSource.PlayOneShot(Audio.Parse(soundEffect), Audio.sfxNormalPriority * Environment.sfxMasterVolume); // Plays audio.
+
+        // TEMPORARY CODE ////////////////////////////////////////////////////////////////////////////////////////////////////
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHandler>().AttackTable[0].lastAngle = angle;
     }
 }
 
@@ -132,6 +163,11 @@ public class AttackStage : List<PatternBase>
     /// The boss' health requirement to move on to the next Attack Stage.
     /// </summary>
     public float healthTriggerPoint;
+
+    /// <summary>
+    /// The angle of the previous shot.
+    /// </summary>
+    public float lastAngle;
 
     /// <summary>
     /// True if this Attack Stage is a spellcard.

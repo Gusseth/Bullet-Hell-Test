@@ -3,12 +3,12 @@
 		{
 			"speaker": "player",
 			"face": "normal",
-			"message": "let's deport Cong"
+			"message": "nothing yet"
 		},
 		{
 			"speaker": "player",
 			"face": "normal",
-			"message": "fuck yeah",
+			"message": "gg",
 			"speakerDisappears": true
 		},
 		{

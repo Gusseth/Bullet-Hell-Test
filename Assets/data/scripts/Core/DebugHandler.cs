@@ -86,7 +86,7 @@ public class DebugHandler : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Backslash))
             {
-                Environment.PlayBGM(Audio.bgm.stg01b);
+                Environment.PlayBGM(Audio.bgm.score);
             }
         }
     }

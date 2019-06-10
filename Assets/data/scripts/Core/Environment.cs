@@ -20,10 +20,10 @@ public class Environment : MonoBehaviour {
     public readonly static string gameName = "Touhou 18 - Mountain of Debugging";
 
     /// <summary> The current version of this build. </summary>
-    public readonly static string version = "v0.02d-dev";
+    public readonly static string version = "v0.02d";
 
     /// <summary> Anti-Wriggle mode. </summary>
-    public readonly static bool debugMode = true;
+    public static bool debugMode = false;
 
     /// <summary> Item gravity scale value. Default value is 0.5</summary>
     public static float itemGravityScale = 0.5F;
@@ -47,10 +47,16 @@ public class Environment : MonoBehaviour {
     /// <summary> SFX base volume. </summary>
     public static float sfxMasterVolume = .5F;
 
+    /// <summary> Returns true if the music should be looped. </summary>
+    public static bool repeatBGM = true;
+
     // Shortcuts for commonly used Components ///////////////////////////////////////////////////////////////////////////////////
 
     /// <summary> The backend Core GameObject. </summary>
     public static GameObject core;
+
+    /// <summary> The background container of the stage GameObject. </summary>
+    public static GameObject background;
 
     /// <summary> The GameManager Monobehaviour. </summary>
     public static GameManager gameManager;
@@ -60,6 +66,9 @@ public class Environment : MonoBehaviour {
 
     /// <summary> The DialogueHandler Monobehaviour. </summary>
     public static DialogueHandler dialogueHandler;
+
+    /// <summary> The GameUIHandler Monobehaviour. </summary>
+    public static GameUIHandler gameUIHandler;
 
     /// <summary> The player GameObject. </summary>
     public static GameObject player;
@@ -99,7 +108,7 @@ public class Environment : MonoBehaviour {
     /// <summary> Ticks passed since the start of the current game session, 1 tick = 1 frame. </summary>
     public static ulong gameplayTime;
 
-    /// <summary> True of the game is paused. </summary>
+    /// <summary> True if the game is paused. </summary>
     public static bool isPaused;
 
     /// <summary> Locks displacement input, bombing, etc. </summary>
@@ -223,15 +232,47 @@ public class Environment : MonoBehaviour {
         sfxAudioSource.PlayOneShot(Audio.Parse(sound), Mathf.Clamp01(volume));
     }
 
+    /// <summary>
+    /// Plays the soundtrack given with the appropriate loop times.
+    /// </summary>
+    /// <param name="bgm">The enumeration of the desired soundtrack.</param>
     public static void PlayBGM(Audio.bgm bgm)
     {
         bgmAudioSource.Stop();
 
-        // TEMP HARDCODE BELOW -- YOU HAVE BEEN WARNED -- PREPARE YOUR EYES ////////////////////////////////////////////////////////////////////////////////////////////////
-        bgmAudioSource.clip = Resources.Load<AudioClip>("bgm/Jelly Stone");
+        repeatBGM = true;
+
+        switch (bgm)
+        {
+            case Audio.bgm.score:
+                bgmAudioSource.clip = Resources.Load<AudioClip>("bgm/Player's Score");
+                core.GetComponent<Environment>().bgmOffset = 759800;
+                core.GetComponent<Environment>().offset2 = 1975857;
+                bgmAudioSource.PlayScheduled(0);
+                break;
+            default:
+                // TEMP HARDCODE BELOW -- YOU HAVE BEEN WARNED -- PREPARE YOUR EYES ////////////////////////////////////////////////////////////////////////////////////////////////
+                bgmAudioSource.clip = Resources.Load<AudioClip>("bgm/Jelly Stone");
+                bgmAudioSource.PlayScheduled(0);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Plays a soundtrack based on the given file name and not looped.
+    /// </summary>
+    /// <param name="filename"></param>
+    public static void PlayBGM(string filename)
+    {
+        bgmAudioSource.Stop();
+        repeatBGM = false;
+        bgmAudioSource.clip = Resources.Load<AudioClip>("bgm/" + filename);
         bgmAudioSource.PlayScheduled(0);
     }
 
+    /// <summary>
+    /// Pauses the game music. Need I say more?
+    /// </summary>
     public static void PauseBGM()
     {
         if (!isPaused)
@@ -386,7 +427,7 @@ public class Environment : MonoBehaviour {
         public T[] array;
     }
 
-    // Public Static IEnumerators
+// Public Static IEnumerators
 
     /// <summary>
     /// Adds a small delay to run the code below this line for x seconds. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
@@ -412,6 +453,30 @@ public class Environment : MonoBehaviour {
         method.Invoke();
     }
 
+    /// <summary>
+    /// Adds a small delay to run the code below this line for x seconds in real time, unaffected from Time.timeScale. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
+    /// </summary>
+    /// <param name="seconds">Delay added in seconds as a float.</param>
+    /// <param name="method">Insert pieces of code to run after the delay has elapsed. Use 'delegate {code}'.</param>
+    /// <returns></returns>
+    public static IEnumerator AddDelayRealtime(float seconds, System.Action method)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        method.Invoke();
+    }
+
+    /// <summary>
+    /// Adds a small delay to run the code below this line for x seconds, unaffected from Time.timeScale. Use 'IEnumerator delay = Enviroment.AddDelay(x, delegate {code})' to do so.
+    /// </summary>
+    /// <param name="seconds">Delay added in seconds as an integer.</param>
+    /// <param name="method">Insert lines of code to run after the delay has elapsed. Use 'delegate {code}'.</param>
+    /// <returns></returns>
+    public static IEnumerator AddDelayRealtime(int seconds, System.Action method)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        method.Invoke();
+    }
+
 
 
 // Private Backend Methods and Functions like Initialization
@@ -422,6 +487,7 @@ public class Environment : MonoBehaviour {
     private static void PriorityInitialize()
     {
         // Loads important data and other crap...
+        Time.timeScale = 1;
     }
 
     // Other functions such as adding tick to the time
@@ -445,14 +511,26 @@ public class Environment : MonoBehaviour {
         time++;
     }
 
-    private void Update()
+    void Update()
     {
         // Temporary code////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (bgmAudioSource.isPlaying && bgmAudioSource.timeSamples >= offset2)
+        if (bgmAudioSource.isPlaying && bgmAudioSource.timeSamples >= offset2 && repeatBGM)
         {
+            // Loops audio
             Debug.Log("Looping Audio...");
             bgmAudioSource.timeSamples = bgmOffset + (bgmAudioSource.timeSamples - offset2);
             Debug.Log(bgmAudioSource.timeSamples);
+        }
+        if (Input.GetKeyDown(KeyCode.R) && (GameManager.gameOver || GameManager.bossDefeated || isPaused))
+        {
+            // Resets the scene
+            lockInput = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
+        }
+        if (Input.GetKeyUp(KeyCode.Q) && (GameManager.gameOver || GameManager.bossDefeated || isPaused))
+        {
+            Application.Quit();
         }
     }
 }

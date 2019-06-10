@@ -57,6 +57,9 @@ public class PlayerHandler : MonoBehaviour {
     /// <summary> Returns true if the player is alive. False if not. </summary>
     public static bool isAlive = true;
 
+    /// <summary> Returns true if the player is in the respawn cycle. False if not. </summary>
+    public static bool isRespawning;
+
     /// <summary> Returns true if the player is focussing. False if not. </summary>
     public static bool isFocused;
 
@@ -151,17 +154,27 @@ public class PlayerHandler : MonoBehaviour {
     private void Kill()
     {
         lives--;
-        power = Mathf.Clamp(power - 1, 0, player.maxPower);
-        Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
-        Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
-        Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<CircleCollider2D>().enabled = false;
-        isFocused = false;
-        transform.Find("HitboxAssist").gameObject.SetActive(false);
-        transform.position = new Vector3(0, -5.5F, 0);
-        isAlive = false;
-        StartCoroutine(PlayerRespawn());
+        if (lives >= 0)
+        {
+            // If the player still has lives left, do the respawn cycle
+            power = Mathf.Clamp(power - 1, 0, player.maxPower);
+            Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
+            Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
+            Environment.SpawnItem(Item.ItemType.bigPower, gameObject, true, Random.Range(10F, 15F));
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            isFocused = false;
+            transform.Find("HitboxAssist").gameObject.SetActive(false);
+            transform.position = new Vector3(0, -5.5F, 0);
+            isAlive = false;
+            isRespawning = true;
+            StartCoroutine(PlayerRespawn());
+        }
+        else
+        {
+            // Else, it's game over.
+            GameManager.GameOver();
+        }
     }
 
     /// <summary>
@@ -210,14 +223,15 @@ public class PlayerHandler : MonoBehaviour {
         yield return new WaitForSeconds(1);
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<CircleCollider2D>().enabled = true;
-        isAlive = true;
         lerpTime = 0;
         playerRespawnTranslation = true;
+        isAlive = true;
         yield return new WaitForSeconds(2);
         Environment.lockInput = false;
         canBomb = true;
         yield return new WaitForSeconds(2);
         isInvincible = false;
+        isRespawning = false;
         Debug.Log("Respawn cycle complete.");
     }
 
@@ -256,6 +270,7 @@ public class PlayerHandler : MonoBehaviour {
                 break;
             case Item.ItemType.life:
                 lives++;
+                GameUIHandler.PlayExtendUI();
                 AddScore(1000);
                 Environment.PlaySound(Audio.sfx.extend, Audio.sfxTopPriority * Environment.sfxMasterVolume);
                 break;

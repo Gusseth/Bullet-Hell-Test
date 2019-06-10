@@ -99,10 +99,19 @@ public class BossHandler : MonoBehaviour {
         StopBulletLoop();
         Environment.ClearAllShots();
 
+        bool previousCardIsSpellcard = AttackTable[0].isSpellcard;
+        int transitionDelay = 3;                                    // Used for determining the delay between attack stages.
+
         foreach (Item.ItemType item in AttackTable[0].LootTable)
         {
             // Spawns in every item in the loot table
             Environment.SpawnItem(item, transform.position);
+        }
+
+        if (previousCardIsSpellcard)
+        {
+            // If the cleared attack is a spellcard, remove the spellcard banner.
+            GameUIHandler.PlayBossSpellcard(false);
         }
 
         try
@@ -114,10 +123,24 @@ public class BossHandler : MonoBehaviour {
 
             if (spellcardActive)
             {
-                Environment.PlaySound(Audio.sfx.spellcard, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
+                if (!previousCardIsSpellcard)
+                {
+                    // If the previous attack was not a spell card, no delay is given
+                    Environment.PlaySound(Audio.sfx.spellcard, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
+                    GameUIHandler.PlayBossSpellcard(true, AttackTable[0].name);
+                }
+                else
+                {
+                    // If the previous attack was a spell card, the player is given an extra second due to animations
+                    StartCoroutine(Environment.AddDelay(.1F, delegate
+                    {
+                        Environment.PlaySound(Audio.sfx.spellcard, Audio.sfxNormalPriority * Environment.sfxMasterVolume);
+                        GameUIHandler.PlayBossSpellcard(true, AttackTable[0].name);
+                    }));
+                }
             }
 
-            IEnumerator smallDelay = Environment.AddDelay(3,
+            IEnumerator smallDelay = Environment.AddDelay(transitionDelay,
             delegate
             {
                 // This part will only error out with an ArgumentOutOfRangeException if the attack table is empty, triggering the catch statement below
@@ -144,7 +167,9 @@ public class BossHandler : MonoBehaviour {
                 StartCoroutine(Environment.AddDelay(.5F, delegate
                 {
                     DialogueHandler.StartDialogue();
+                    StopAllCoroutines();
                 }));
+                Environment.CollectAllItems();
                 Destroy(gameObject, 1);
             }
         }

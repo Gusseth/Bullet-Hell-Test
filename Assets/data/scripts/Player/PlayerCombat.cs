@@ -163,7 +163,7 @@ public class PlayerCombat : MonoBehaviour {
                 Shoot();
             }
 
-            if (Input.GetKeyDown(bombButton) && PlayerHandler.canBomb)
+            if (Input.GetKeyDown(bombButton) && PlayerHandler.canBomb && playerHandler.bombs > 0)
             {
                 Bomb();
             }

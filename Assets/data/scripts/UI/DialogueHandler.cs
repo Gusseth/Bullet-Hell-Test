@@ -120,12 +120,17 @@ public class DialogueHandler : MonoBehaviour
             }
             else
             {
+                // Code below is only completely run when the player runs down the delay timer
+                // If the player presses Z or Left Control, the catch statements below are run.
+
                 dialogueDelay = StartCoroutine(Environment.AddDelay(delay, delegate
                 {
+                    // No more dialogue remains, so end the conversation and shoot!
+                    EndDialogue();
 
                     if (!dialogue.endStage)
                     {
-
+                        // If the dialogue is only supposed to end the encounter, load the next encounter
                         dialogueTable = stageDialogueTable.Table[0].Table;
                         stageDialogueTable.Table.Remove(stageDialogueTable.Table[0]);
                     }
@@ -153,16 +158,21 @@ public class DialogueHandler : MonoBehaviour
                 dialogueTable = stageDialogueTable.Table[0].Table;
                 stageDialogueTable.Table.Remove(stageDialogueTable.Table[0]);
 
-                Debug.LogWarning("Dialogue parsed was the last message in the encounter, but it doesn't have endDialogue set to true!");
+                //Debug.LogWarning("Dialogue parsed was the last message in the encounter, but it doesn't have endDialogue set to true!");
                 return;
             }
             catch (System.ArgumentOutOfRangeException)
             {
                 // Safeguard measure in case I forget to turn a dialogue event to end the conversation to 'true'.
                 // This section of code is only run when the stageDialogueTable list is empty because it errors out, triggering this.
-                Debug.LogWarning("Dialogue parsed was the last message in the stage, but it doesn't have endStage set to true!");
+                
+                // No more dialogue remains, so end the conversation and shoot!
+                EndDialogue();
 
+                // Tells the GameManager component to end the stage.
                 GameManager.EndStage();
+
+                //Debug.LogWarning("Dialogue parsed was the last message in the stage, but it doesn't have endStage set to true!");
                 return;
             }
         }
@@ -269,6 +279,12 @@ public class DialogueHandler : MonoBehaviour
         isDialogueActive = true;
         PlayerHandler.canShoot = false;
         PlayerHandler.isInvincible = true;
+
+        if (GameManager.bossDefeated)
+        {
+            int stage = (int)GameManager.GetStage();
+            Environment.dialogueHandler.enemyBody.GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("th17demo/face/" + "enemy" + stage + "/" + "face" + (stage).ToString("00") + "bsl");
+        }
     }
 
     /// <summary>
@@ -350,7 +366,10 @@ public class DialogueHandler : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Z) && isDialogueActive) || (Input.GetKey(KeyCode.LeftControl) && isDialogueActive))
         {
-            StopCoroutine(dialogueDelay);
+            if (dialogueDelay != null)
+            {
+                StopCoroutine(dialogueDelay);
+            }
             CycleDialogue();
         }
     }

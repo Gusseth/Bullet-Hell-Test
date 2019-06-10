@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     public static float pointMultiplier = 1.0F;
 
     /// <summary> The highest score achieved in this difficulty. </summary>
-    public static ulong hiScore;
+    public static ulong hiScore = 0;
 
     /// <summary> Is the boss defeated? </summary>
     public static bool bossDefeated = false;
+
+    /// <summary> Returns true if the player ran out of lives. </summary>
+    public static bool gameOver = false;
 
     /// <summary> The difficulty of the game. </summary>
     public Environment.Difficulty difficulty;
@@ -72,12 +75,46 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// End the stage.
+    /// Ends the stage.
     /// </summary>
     public void EndStageMono()
     {
         Environment.PlaySound(Audio.sfx.cardClear, Audio.sfxTopPriority * Environment.sfxMasterVolume);
-        StartCoroutine(Audio.FadeOut(Environment.bgmAudioSource, 5));
+        GameUIHandler.PlayStageTransition();
+        Environment.lockInput = true;
+        StartCoroutine(Audio.FadeOut(Environment.bgmAudioSource, 3));
+
+        // Audio related things during the end scene
+        int i = Random.Range(0, 5);
+        switch (i)
+        {
+            case 0:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("The Lost Emotion"); }));
+                break;
+            case 1:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("Shinkirou Orchestra"); }));
+                break;
+            case 2:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("Tomorrow will be Special; Yesterday Was Not"); }));
+                break;
+            case 3:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("The Space Shrine Maiden Appears"); }));
+                break;
+            case 4:
+                StartCoroutine(Environment.AddDelay(3, delegate { Environment.PlayBGM("Old Adam Bar"); }));
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Triggers the Game Over response.
+    /// </summary>
+    public void GameOverMono()
+    {
+        Environment.lockInput = true;
+        Environment.PlayBGM(Audio.bgm.score);
+        GameUIHandler.PlayGameOver();
+        Time.timeScale = 0;
     }
 
     // Public Static Methods and Functions
@@ -116,6 +153,11 @@ public class GameManager : MonoBehaviour
         Environment.gameManager.EndStageMono();
     }
 
+    public static void GameOver()
+    {
+        Environment.gameManager.GameOverMono();
+    }
+
  // Private Functions and Methods
 
     /// <summary>
@@ -124,7 +166,10 @@ public class GameManager : MonoBehaviour
     /// <param name="pause"></param>
     private void OnApplicationPause(bool pause)
     {
-        Pause(pause);
+        if (!gameOver)
+        {
+            Pause(pause);
+        }
     }
 
     // Start is called before the first frame update
@@ -140,7 +185,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver)
         {
             Pause();
             return;
@@ -149,7 +194,21 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Environment.gameplayTime++;
+        if (!Environment.isPaused)
+        {
+            Environment.gameplayTime++;
+        }
+
+        if (PlayerHandler.isRespawning || PlayerHandler.isBombing)
+        {
+            // Prevents the enemy from spamming bullets when the player is not alive.
+            Environment.ClearAllShots();
+        }
+
+        if (PlayerHandler.isBombing)
+        {
+            Environment.CollectAllItems();
+        }
     }
 
 }
