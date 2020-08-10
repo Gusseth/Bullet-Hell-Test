@@ -1,2 +1,4 @@
 # Bullet-Hell-Test
-Trying to make a bullet hell game in Unity for a final year project.
+This was an old project that emulated Touhou 17 in Unity for a year-long project for high school.
+
+This project originally used ripped assets from said game, so this project will not work when compiled as is.
